@@ -7,6 +7,7 @@ we know the right answer for every field and can measure extraction accuracy.
 import argparse
 import json
 import random
+from datetime import date, timedelta
 from pathlib import Path
 
 STAMP = "SYNTHETIC TEST DATA, NOT A REAL POLICY"
@@ -16,6 +17,11 @@ AGENCIES = [
     {"agency_id": "AGY002", "name": "Lakeshore Risk Partners (fictional)"},
     {"agency_id": "AGY003", "name": "Northbay Family Insurance (fictional)"},
 ]
+
+CARRIERS = ["Trillium Mutual (fictional)", "Huron General (fictional)", "Boreal Assurance (fictional)"]
+
+VEHICLES = ["Honda Civic", "Toyota RAV4", "Ford F-150", "Hyundai Elantra", "Mazda CX-5",
+            "Chevrolet Equinox", "Kia Sorento", "Subaru Outback", "Tesla Model 3", "Nissan Rogue"]
 
 # Coverage names follow OAP 1 sections.
 OPTIONAL_COVERAGES = ["collision_or_upset", "comprehensive", "specified_perils", "all_perils"]
@@ -29,6 +35,7 @@ CHANGE_TYPES = {
     "coverage_dropped": 0.10,
     "driver_added": 0.10,
     "vehicle_changed": 0.07,
+    "carrier_changed": 0.05,
 }
 
 
@@ -38,6 +45,9 @@ def make_policy(rng: random.Random, agency_id: str, n: int) -> dict:
         "policy_number": f"SYN-{agency_id}-{n:05d}",
         "agency_id": agency_id,
         "insured_name": f"Test Client {agency_id[-1]}{n:03d}",
+        "carrier": rng.choice(CARRIERS),
+        "effective_date": (date(2025, 1, 1) + timedelta(days=rng.randint(0, 364))).isoformat(),
+        "vehicle": rng.choice(VEHICLES),
         "vehicle_year": rng.randint(2012, 2025),
         "liability_limit": rng.choice([1_000_000, 2_000_000]),
         "collision_deductible": rng.choice([500, 1000]),
@@ -50,6 +60,8 @@ def make_policy(rng: random.Random, agency_id: str, n: int) -> dict:
 
 def make_renewal(rng: random.Random, prior: dict) -> tuple[dict, list[str]]:
     renewal = dict(prior, optional_coverages=list(prior["optional_coverages"]))
+    prior_start = date.fromisoformat(prior["effective_date"])
+    renewal["effective_date"] = prior_start.replace(year=prior_start.year + 1).isoformat()
     planted = [c for c, p in CHANGE_TYPES.items() if rng.random() < p]
     base_rise = rng.uniform(0.0, 0.05)
     premium = prior["annual_premium"] * (1 + base_rise)
@@ -68,6 +80,9 @@ def make_renewal(rng: random.Random, prior: dict) -> tuple[dict, list[str]]:
             renewal["drivers"] += 1
         elif change == "vehicle_changed":
             renewal["vehicle_year"] = min(2026, prior["vehicle_year"] + rng.randint(2, 6))
+            renewal["vehicle"] = rng.choice([v for v in VEHICLES if v != prior["vehicle"]])
+        elif change == "carrier_changed":
+            renewal["carrier"] = rng.choice([c for c in CARRIERS if c != prior["carrier"]])
     renewal["annual_premium"] = round(premium, 2)
     return renewal, planted
 
