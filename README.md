@@ -103,7 +103,7 @@ with no false alarms, at about half a cent per document.
 - Row filter tests check the access rule; a live login as a broker is still a manual check.
 - Cost is an estimate at list price; Free Edition cost nothing.
 
-## The problem
+## The problem in more detail
 
 - A mid size agency renews hundreds of auto policies a month, and each renewal comes as a PDF
   from a different carrier with a different layout. Some are scans.
