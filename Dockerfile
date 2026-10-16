@@ -1,7 +1,7 @@
 FROM python:3.11-slim-bookworm
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends openjdk-17-jre-headless make curl \
+    && apt-get install -y --no-install-recommends openjdk-17-jre-headless make curl poppler-utils tesseract-ocr \
     && rm -rf /var/lib/apt/lists/*
 
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 \
