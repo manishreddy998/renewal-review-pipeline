@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: fct_renewal_changes
+    description: Last year against the renewal for each pair, with change flags.
+    columns:
+      - name: pair_id
+        tests: [not_null, unique]
+
+  - name: mart_renewal_queue
+    description: Broker work list ranked by risk inside each agency. Has a Unity Catalog row filter by agency.
+    columns:
+      - name: pair_id
+        tests: [not_null, unique]
+      - name: priority
+        tests:
+          - accepted_values:
+              values: ['review now', 'review', 'routine']
+
+  - name: fct_change_evidence
+    description: Every flagged change with cited page and evidence text for both years.
+    columns:
+      - name: prior_page
+        tests:
+          - not_null:
+              config:
+                where: "prior_value is not null"
+      - name: renewal_page
+        description: Empty when the renewal no longer has the value at all, for example every optional coverage removed.
+        tests:
+          - not_null:
+              config:
+                where: "renewal_value is not null"
+
