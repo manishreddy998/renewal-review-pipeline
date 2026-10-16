@@ -23,11 +23,14 @@ Coverage names follow the sections of the FSRA OAP 1 policy, so the documents us
 - Agency and client names are made up and marked "(fictional)".
 - The generator uses a fixed seed, so the same command always gives the same data.
 
-## Build order
+## How documents are rendered
 
-1. Answer key as JSON lines (done in this step, `make synthetic`).
-2. Render each policy as a 2 to 3 page PDF declarations page with the stamp in the header and
-   footer of every page.
-3. Add some realistic mess: different layouts per agency, scanned looking pages, and a few
-   missing fields, so results are not too optimistic.
-4. Load the answer key into Delta tables split by agency, for the accuracy checks later.
+`make render` turns every record into a PDF (400 documents, 2 or 3 pages each).
+
+- Maple Lane (AGY001) uses a clean two column table with dollar amounts like `$1,000`.
+- Lakeshore (AGY002) uses an all caps carrier form spread over 3 pages, with amounts like
+  `1000.00 CAD` and coverage names with OAP 1 section numbers.
+- Northbay (AGY003) writes a friendly letter, so the facts sit inside sentences.
+- About 15 percent of documents are turned into scanned looking images: slight rotation, grey
+  noise, a little blur, and no text layer. These need OCR before anything can read them.
+- The stamp is printed in the header and footer of every page, plus a large watermark.
