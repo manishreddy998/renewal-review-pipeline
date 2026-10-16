@@ -1,0 +1,8 @@
+document_id,agency_id,scanned,field,extracted,expected
+SYN-AGY002-00047_prior,AGY002,True,annual_premium,1596.52,1500.52
+SYN-AGY003-00174_prior,AGY003,True,annual_premium,3964.61,3984.61
+SYN-AGY002-00080_renewal,AGY002,True,collision_deductible,1506,1500
+SYN-AGY003-00048_prior,AGY003,True,drivers,,1
+SYN-AGY003-00063_renewal,AGY003,True,drivers,,1
+SYN-AGY002-00011_prior,AGY002,True,effective_date,2025-02-28,2025-01-28
+SYN-AGY002-00050_renewal,AGY002,True,effective_date,2026-10-29,2026-10-20

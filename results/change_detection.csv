@@ -1,0 +1,10 @@
+change_type,actual_changes,true_positives,false_positives,false_negatives,precision,recall
+large_premium_increase,44,44,0,0,1.0,1.0
+deductible_raised,30,30,0,0,1.0,1.0
+liability_lowered,7,7,0,0,1.0,1.0
+premium_increase,49,49,0,0,1.0,1.0
+coverage_dropped,13,13,0,0,1.0,1.0
+vehicle_changed,14,14,0,0,1.0,1.0
+carrier_changed,13,13,0,0,1.0,1.0
+driver_added,23,23,0,0,1.0,1.0
+all changes,193,193,0,0,1.0,1.0
