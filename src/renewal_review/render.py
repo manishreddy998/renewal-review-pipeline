@@ -117,6 +117,8 @@ def layout_caps(c, p, agency, version):
     c.drawString(50, y, f"  COLLISION DEDUCTIBLE ......... {p['collision_deductible']:.2f} CAD"); y -= 16
     for cov in p["optional_coverages"]:
         c.drawString(50, y, f"  {COVERAGE_LABELS[agency][cov]} ... INCLUDED"); y -= 16
+    if not p["optional_coverages"]:
+        c.drawString(50, y, "  OPTIONAL COVERAGES ............ NONE"); y -= 16
     c.drawString(50, y - 10, f"  TOTAL PREMIUM (12 MOS) ....... {money(agency, p['annual_premium'])}")
 
 
