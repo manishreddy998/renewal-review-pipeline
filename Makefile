@@ -18,7 +18,7 @@ load:
 
 # Extraction needs ai_query, which only exists on Databricks, so locally we stop at staging.
 dbt:
-	cd dbt && dbt build --select staging
+	cd dbt && dbt build --select staging --indirect-selection cautious
 
 test:
 	pytest -q
