@@ -1,5 +1,6 @@
-.PHONY: fetch synthetic render load dbt smoke test check-databricks load-databricks dbt-databricks databricks
+.PHONY: fetch synthetic render pages load dbt smoke test check-databricks load-databricks dbt-databricks export databricks
 
+# Local, offline: build the data and run the staging models on Spark with Delta tables.
 fetch:
 	python -m renewal_review.fetch_sources
 
@@ -9,17 +10,22 @@ synthetic:
 render:
 	python -m renewal_review.render
 
+pages:
+	python -m renewal_review.pages
+
 load:
 	python -m renewal_review.load_raw --target local
 
+# Extraction needs ai_query, which only exists on Databricks, so locally we stop at staging.
 dbt:
-	cd dbt && dbt build
+	cd dbt && dbt build --select staging
 
 test:
 	pytest -q
 
-smoke: test fetch synthetic render load dbt
+smoke: test fetch synthetic render pages load dbt
 
+# Full pipeline on Databricks. Needs DATABRICKS_* in .env.
 check-databricks:
 	python -m renewal_review.databricks_check
 
@@ -29,4 +35,7 @@ load-databricks:
 dbt-databricks:
 	cd dbt && dbt build --target databricks
 
-databricks: fetch synthetic check-databricks load-databricks dbt-databricks
+export:
+	python -m renewal_review.export_results
+
+databricks: fetch synthetic render pages check-databricks load-databricks dbt-databricks export
