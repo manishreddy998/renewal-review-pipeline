@@ -1,0 +1,2 @@
+endpoint,documents,avg_input_tokens,avg_output_tokens,total_dbu,total_usd,usd_per_document
+databricks-gemini-3-5-flash,400,693.0,310.0,27.3729,1.9161,0.00479

@@ -1,41 +1,176 @@
 # Renewal Review Pipeline
 
-A small data pipeline that reads last year's policy and the renewal offer for the same client,
-pulls out the key fields, compares them, and ranks the accounts a broker should look at first.
+Every year a broker gets a renewal offer for each client: a new premium, maybe a higher
+deductible, maybe a coverage that quietly disappeared. Nobody has time to read every renewal
+next to last year's policy, so the risky ones slip through.
 
-Every value keeps a pointer back to the document and page it came from, and each agency only
-sees its own data.
+This project reads last year's policy and the renewal for the same client, pulls out the key
+fields, compares them, and gives each agency a ranked work list of the accounts a person should
+look at first. Every number points back to the page it came from, and each agency only sees
+its own clients. It runs on Databricks with Delta tables, Unity Catalog and dbt.
 
-Status: early setup. More sections will be added as each part is built.
+> All policies in this repo are made up. Every page is stamped
+> "SYNTHETIC TEST DATA, NOT A REAL POLICY".
 
-## Run it
+![Dashboard](docs/images/dashboard.png)
 
-Everything runs in Docker.
+## The problem
+
+- A mid size agency renews hundreds of auto policies a month, and each renewal comes as a PDF
+  from a different carrier with a different layout. Some are scans.
+- The things that matter are small: a 25 percent price jump, a deductible going from $500 to
+  $1,000, collision coverage gone, liability cut from $2M to $1M.
+- A broker needs to know which accounts to call this week, and why, with proof.
+- The data has client details in it, so one agency must never see another agency's accounts.
+
+## The data
+
+| Source | What it is | Rows |
+| --- | --- | --- |
+| FSRA Ontario OAP 1 | The standard Ontario owner's auto policy (July 2026 version), used for real coverage names and section numbers | 68 pages |
+| Synthetic policies | 200 clients across 3 fictional agencies, each with last year's policy and a renewal. Changes are planted so the right answer is known | 400 documents, 934 pages |
+| Agency policy list | Policy number and client name per agency, like an export from an agency management system | 200 policies |
+
+The three agencies use different layouts on purpose: a clean table, an all caps carrier form
+over three pages, and a friendly letter where the facts sit inside sentences. 71 of the 400
+documents (18 percent) are turned into scanned looking images with rotation, grey noise and
+blur, so they have to go through OCR. See [docs/sources.md](docs/sources.md) and
+[docs/synthetic-data-plan.md](docs/synthetic-data-plan.md).
+
+![Sample documents](docs/images/sample_documents.png)
+
+## How it works
 
 ```
+PDFs ──> page text (PDF text or OCR) ──> raw Delta tables in Unity Catalog
+     ──> ai_query extraction with page citations ──> cleaning and repair
+     ──> last year vs renewal ──> risk score and work list per agency
+     ──> evaluation against the answer key
+```
+
+1. **Render and read.** `render.py` builds the PDFs. `pages.py` reads the text layer, or runs
+   Tesseract OCR on scanned pages and keeps the confidence of every number it reads.
+2. **Load.** `load_raw.py` writes the raw tables to `workspace.raw` on Databricks (or to local
+   Delta tables for offline work).
+3. **Extract** (`int_extraction_raw`). One `ai_query` call per document on the
+   `databricks-gemini-3-5-flash` endpoint. The model returns 11 fields as JSON, and for each one
+   the page number and the exact text it used. The model is told which page is which.
+   The model is called incrementally, so a document is only sent again when its text or the
+   prompt changes.
+4. **Clean and repair** (`int_extracted_fields`).
+   - Money, dates and coverage names are put in one format.
+   - OCR mistakes are repaired against things the agency already knows: its own policy numbers,
+     client names, carriers and vehicle models. A fix is only accepted within 3 edits.
+   - A year like 2625 (OCR read the 0 as a 6) is put back to 2025.
+   - On digital documents, a coverage is dropped if its name does not appear in the text.
+   - Every value is checked: does the quoted evidence really appear on the cited page?
+5. **Compare** (`fct_renewal_changes`). Eight change flags: large premium increase (over 15
+   percent), premium increase (5 to 15 percent), deductible raised, liability lowered, coverage
+   dropped, driver added, vehicle changed, carrier changed.
+6. **Rank** (`mart_renewal_queue`). A weighted score puts each account in "review now",
+   "review" or "routine". Losing coverage or liability weighs most. Accounts where a number
+   might be misread are marked `needs_data_check`: renewal date not one year after last year's,
+   policy numbers that do not match, a key field missing, or an OCR number read with low
+   confidence.
+7. **Evidence** (`fct_change_evidence`). Each flagged change with the page and quoted text for
+   both years, so a broker can check it in seconds.
+8. **Isolation.** The work list has a Unity Catalog row filter. A user sees an agency's rows only
+   if `agency_access` grants it. There is also one view per agency.
+9. **Evaluation** (`models/eval`). Field accuracy, change detection precision and recall, work
+   list agreement, data check catch rate, and cost.
+
+dbt runs 60 models, seeds and tests on Databricks, all passing.
+
+## Results
+
+Measured on Databricks on Oct 16, 2026, on all 400 documents.
+
+| Measure | Result |
+| --- | --- |
+| Field accuracy, all 4,400 fields | **99.84%** (4,393 correct) |
+| Field accuracy, digital PDFs (329 docs) | **100%** |
+| Field accuracy, scanned docs (71 docs) | **99.1%** (7 misread numbers) |
+| Change detection, 193 real changes | **100% precision, 100% recall** |
+| Work list priority matches the answer key | **200 of 200 accounts** |
+| "Review now" accounts found | **71 of 71**, no extras |
+| Misread accounts marked "needs data check" | **7 of 7** (18 more were marked but fine) |
+| Evidence quote found on the cited page | **100%** of values, every cited page exists |
+| Model cost | **$0.0048 per document**, $1.92 for all 400 (list price, about 693 input and 310 output tokens each) |
+| Extraction time | 171 seconds for 400 documents in one batch, about 0.43 seconds each |
+| Cross agency leaks | **0** (dbt tests over every broker and agency pair) |
+
+![Field accuracy](docs/images/field_accuracy.png)
+
+### What we fixed along the way
+
+The first full run was weaker. Each problem was fixed in the pipeline, then measured again.
+
+| Problem found | Fix | Before | After |
+| --- | --- | --- | --- |
+| Model listed collision as a coverage because of a "COLLISION DEDUCTIBLE" line | Clearer coverage rules in the prompt, NONE printed on empty schedules, and a text check on digital docs | coverage dropped precision 65% | 100% |
+| OCR garbled policy numbers (`SYN-AGY@@2`, `AGYO92-p9059`) | Match to the agency's own policy list, fall back to the client name | 73% on scans | 100% |
+| OCR garbled names (`huron genera!`, `tesia model 3`) | Match to known carriers and vehicle models | 99.0% | 100% |
+| OCR read years as 2625 | Fix years after 2030 | 4 wrong dates | 2 wrong dates |
+| Misread premiums could not be fixed from the page | Flag low OCR confidence, date mismatches and missing fields as "needs data check" | 4 of 8 caught | 7 of 7 caught |
+| Overall change detection | All of the above | 94.2% precision | 100% |
+
+### Honest limits
+
+- The documents are synthetic. Real carrier PDFs are messier, longer and have more fields.
+  The scanned ones here have light noise compared with a fax.
+- 7 numbers on scanned pages are still misread (2 premiums, 2 dates, 2 driver counts, 1
+  deductible). They cannot be fixed from the page alone, so they are flagged for a person
+  instead. In this run none of them changed a flag or a priority, but that was partly luck.
+- The cost is at Databricks list price for this endpoint. On Free Edition it cost nothing.
+- Row filter tests check the rule for every broker and agency. A test cannot log in as another
+  user, so the live check for a real broker account still has to be done by hand.
+- The weights in the risk score are a sensible starting point, not tuned on real broker
+  decisions.
+
+## Run it on a Mac
+
+You need Docker Desktop. Everything runs in Docker.
+
+```
+git clone <this repo>
+cd renewal-review-pipeline
+cp .env.example .env        # fill in DATABRICKS_HOST, DATABRICKS_HTTP_PATH, DATABRICKS_TOKEN
 docker compose build
+```
+
+Offline check, no Databricks needed (tests, FSRA download, PDFs, OCR, local Delta tables, dbt staging):
+
+```
 docker compose run --rm app make smoke
 ```
 
-`make smoke` runs the tests, downloads the FSRA OAP 1 policy wording, builds the synthetic
-answer key, and loads the raw tables and runs dbt against local Delta tables.
-
-To run on Databricks later, copy `.env.example` to `.env`, fill in the workspace values, and run
-`dbt build --target databricks` from the `dbt` folder.
-
-## Docs
-
-- `docs/sources.md`: where the public data comes from and license notes
-- `docs/synthetic-data-plan.md`: how the test policies are made
-
-## Databricks
-
-The same raw tables and dbt models run on a Databricks SQL warehouse (Unity Catalog,
-catalog `workspace`). Put the host, HTTP path and token in `.env`, then:
+Full pipeline on Databricks, then the dashboard:
 
 ```
 docker compose run --rm app make databricks
+docker compose up dashboard
 ```
 
-This checks the connection, loads `workspace.raw`, and runs `dbt build --target databricks`,
-which writes the models to `workspace.renewal_review`.
+Open http://localhost:8501. The dashboard reads the CSV files in `results/`, so it also works
+straight away with the results already in the repo.
+
+Useful pieces on their own:
+
+```
+docker compose run --rm app make load-databricks     # reload raw tables
+docker compose run --rm app make dbt-databricks      # dbt build on Databricks
+docker compose run --rm app make export              # refresh results/*.csv
+```
+
+## Repo layout
+
+```
+src/renewal_review/   data generation, PDF rendering, OCR, loaders, export
+dbt/models/staging    raw tables as views
+dbt/models/silver     extraction, cleaning, repair, typed policies
+dbt/models/gold       comparison, work list, evidence, agency views
+dbt/models/eval       accuracy, change detection, data checks, cost
+dbt/tests             leak tests, traceability, row filter checks
+dashboard/            Streamlit work list
+results/              exported results and summary
+```

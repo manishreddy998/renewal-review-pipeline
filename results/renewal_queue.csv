@@ -1,0 +1,201 @@
+agency_id,agency_rank,risk_score,priority,needs_data_check,pair_id,policy_number,insured_name,renewal_effective_date,prior_premium,renewal_premium,premium_change_pct,reasons,any_scanned,prior_document_id,renewal_document_id
+AGY001,1,7.0,review now,False,181,SYN-AGY001-00181,test client 1181,2026-06-25,3814.70,4952.65,29.8,"large premium increase, driver added",False,SYN-AGY001-00181_prior,SYN-AGY001-00181_renewal
+AGY001,2,6.8,review now,False,163,SYN-AGY001-00163,test client 1163,2026-03-14,4150.66,4882.30,17.6,"large premium increase, deductible raised",True,SYN-AGY001-00163_prior,SYN-AGY001-00163_renewal
+AGY001,3,6.0,review now,False,139,SYN-AGY001-00139,test client 1139,2026-01-24,4002.41,5484.83,37.0,large premium increase,False,SYN-AGY001-00139_prior,SYN-AGY001-00139_renewal
+AGY001,4,6.0,review now,False,31,SYN-AGY001-00031,test client 1031,2026-08-08,3702.53,5013.11,35.4,large premium increase,True,SYN-AGY001-00031_prior,SYN-AGY001-00031_renewal
+AGY001,5,6.0,review now,False,190,SYN-AGY001-00190,test client 1190,2026-02-27,3233.93,4285.53,32.5,large premium increase,True,SYN-AGY001-00190_prior,SYN-AGY001-00190_renewal
+AGY001,6,6.0,review now,False,70,SYN-AGY001-00070,test client 1070,2026-05-25,3212.45,4175.73,30.0,large premium increase,False,SYN-AGY001-00070_prior,SYN-AGY001-00070_renewal
+AGY001,7,6.0,review now,False,178,SYN-AGY001-00178,test client 1178,2026-12-02,2487.17,3286.17,32.1,large premium increase,False,SYN-AGY001-00178_prior,SYN-AGY001-00178_renewal
+AGY001,8,6.0,review now,False,130,SYN-AGY001-00130,test client 1130,2026-03-31,2049.20,2252.75,9.9,"premium increase, coverage dropped",True,SYN-AGY001-00130_prior,SYN-AGY001-00130_renewal
+AGY001,9,5.9,review now,False,118,SYN-AGY001-00118,test client 1118,2026-02-11,2947.56,3792.80,28.7,large premium increase,False,SYN-AGY001-00118_prior,SYN-AGY001-00118_renewal
+AGY001,10,5.8,review now,False,106,SYN-AGY001-00106,test client 1106,2026-02-07,4183.55,4515.83,7.9,"premium increase, liability lowered",False,SYN-AGY001-00106_prior,SYN-AGY001-00106_renewal
+AGY001,11,5.8,review now,False,154,SYN-AGY001-00154,test client 1154,2026-05-08,3696.25,4342.36,17.5,"large premium increase, driver added",True,SYN-AGY001-00154_prior,SYN-AGY001-00154_renewal
+AGY001,12,5.7,review now,False,55,SYN-AGY001-00055,test client 1055,2026-12-20,3795.26,4816.69,26.9,large premium increase,False,SYN-AGY001-00055_prior,SYN-AGY001-00055_renewal
+AGY001,13,5.5,review now,False,49,SYN-AGY001-00049,test client 1049,2026-05-11,3297.31,4129.31,25.2,large premium increase,True,SYN-AGY001-00049_prior,SYN-AGY001-00049_renewal
+AGY001,14,4.6,review now,True,52,SYN-AGY001-00052,test client 1052,2026-09-04,4096.10,4765.16,16.3,large premium increase,True,SYN-AGY001-00052_prior,SYN-AGY001-00052_renewal
+AGY001,15,4.6,review now,False,100,SYN-AGY001-00100,test client 1100,2026-10-21,3870.29,4498.14,16.2,large premium increase,False,SYN-AGY001-00100_prior,SYN-AGY001-00100_renewal
+AGY001,16,4.3,review now,False,91,SYN-AGY001-00091,test client 1091,2026-09-21,1652.14,1707.69,3.4,coverage dropped,False,SYN-AGY001-00091_prior,SYN-AGY001-00091_renewal
+AGY001,17,4.2,review now,False,145,SYN-AGY001-00145,test client 1145,2026-07-23,2526.38,2567.65,1.6,coverage dropped,False,SYN-AGY001-00145_prior,SYN-AGY001-00145_renewal
+AGY001,18,4.1,review now,False,133,SYN-AGY001-00133,test client 1133,2026-05-28,1550.11,1718.75,10.9,"premium increase, deductible raised",False,SYN-AGY001-00133_prior,SYN-AGY001-00133_renewal
+AGY001,19,4.0,review,False,82,SYN-AGY001-00082,test client 1082,2026-06-29,3190.51,3501.48,9.7,"premium increase, carrier changed",True,SYN-AGY001-00082_prior,SYN-AGY001-00082_renewal
+AGY001,20,3.6,review,False,64,SYN-AGY001-00064,test client 1064,2026-12-14,2506.74,2662.91,6.2,"premium increase, carrier changed",False,SYN-AGY001-00064_prior,SYN-AGY001-00064_renewal
+AGY001,21,3.4,review,False,76,SYN-AGY001-00076,test client 1076,2026-11-29,2203.26,2295.24,4.2,"deductible raised, driver added",False,SYN-AGY001-00076_prior,SYN-AGY001-00076_renewal
+AGY001,22,3.3,review,False,58,SYN-AGY001-00058,test client 1058,2026-11-26,3321.07,3412.13,2.7,"deductible raised, driver added",False,SYN-AGY001-00058_prior,SYN-AGY001-00058_renewal
+AGY001,23,3.0,review,False,160,SYN-AGY001-00160,test client 1160,2026-11-05,3970.11,4383.82,10.4,"premium increase, vehicle changed",False,SYN-AGY001-00160_prior,SYN-AGY001-00160_renewal
+AGY001,24,2.8,review,False,142,SYN-AGY001-00142,test client 1142,2026-10-16,3422.81,3685.96,7.7,"premium increase, driver added",False,SYN-AGY001-00142_prior,SYN-AGY001-00142_renewal
+AGY001,25,2.4,review,True,196,SYN-AGY001-00196,test client 1196,2026-08-03,4098.06,4274.42,4.3,deductible raised,True,SYN-AGY001-00196_prior,SYN-AGY001-00196_renewal
+AGY001,26,2.4,review,False,40,SYN-AGY001-00040,test client 1040,2026-01-21,1655.72,1718.33,3.8,carrier changed,False,SYN-AGY001-00040_prior,SYN-AGY001-00040_renewal
+AGY001,27,2.4,review,False,1,SYN-AGY001-00001,test client 1001,2026-05-21,3473.87,3595.69,3.5,deductible raised,False,SYN-AGY001-00001_prior,SYN-AGY001-00001_renewal
+AGY001,28,2.3,review,False,88,SYN-AGY001-00088,test client 1088,2026-10-01,3244.45,3338.02,2.9,"driver added, vehicle changed",False,SYN-AGY001-00088_prior,SYN-AGY001-00088_renewal
+AGY001,29,2.2,review,False,94,SYN-AGY001-00094,test client 1094,2026-06-03,3684.10,3771.52,2.4,carrier changed,False,SYN-AGY001-00094_prior,SYN-AGY001-00094_renewal
+AGY001,30,2.2,review,True,127,SYN-AGY001-00127,test client 1127,2026-10-02,3241.28,3311.04,2.2,deductible raised,True,SYN-AGY001-00127_prior,SYN-AGY001-00127_renewal
+AGY001,31,2.2,review,False,22,SYN-AGY001-00022,test client 1022,2026-07-14,3734.43,4172.06,11.7,premium increase,False,SYN-AGY001-00022_prior,SYN-AGY001-00022_renewal
+AGY001,32,2.2,review,True,121,SYN-AGY001-00121,test client 1121,2026-12-15,2227.06,2485.42,11.6,premium increase,True,SYN-AGY001-00121_prior,SYN-AGY001-00121_renewal
+AGY001,33,2.0,review,False,151,SYN-AGY001-00151,test client 1151,2026-06-07,4091.32,4510.08,10.2,premium increase,False,SYN-AGY001-00151_prior,SYN-AGY001-00151_renewal
+AGY001,34,2.0,routine,False,43,SYN-AGY001-00043,test client 1043,2026-11-08,1438.29,1581.23,9.9,premium increase,False,SYN-AGY001-00043_prior,SYN-AGY001-00043_renewal
+AGY001,35,1.9,routine,False,166,SYN-AGY001-00166,test client 1166,2026-06-19,2188.26,2389.61,9.2,premium increase,False,SYN-AGY001-00166_prior,SYN-AGY001-00166_renewal
+AGY001,36,1.8,routine,False,73,SYN-AGY001-00073,test client 1073,2026-12-21,2550.40,2761.65,8.3,premium increase,True,SYN-AGY001-00073_prior,SYN-AGY001-00073_renewal
+AGY001,37,1.8,routine,False,148,SYN-AGY001-00148,test client 1148,2026-09-18,2720.94,2936.27,7.9,premium increase,False,SYN-AGY001-00148_prior,SYN-AGY001-00148_renewal
+AGY001,38,1.7,routine,False,16,SYN-AGY001-00016,test client 1016,2026-03-01,3093.52,3308.11,6.9,premium increase,False,SYN-AGY001-00016_prior,SYN-AGY001-00016_renewal
+AGY001,39,1.7,routine,False,34,SYN-AGY001-00034,test client 1034,2026-09-29,2670.49,2855.70,6.9,premium increase,False,SYN-AGY001-00034_prior,SYN-AGY001-00034_renewal
+AGY001,40,1.5,routine,False,115,SYN-AGY001-00115,test client 1115,2026-11-25,1791.88,1887.56,5.3,premium increase,False,SYN-AGY001-00115_prior,SYN-AGY001-00115_renewal
+AGY001,41,1.5,routine,False,184,SYN-AGY001-00184,test client 1184,2026-01-10,1461.36,1539.33,5.3,premium increase,False,SYN-AGY001-00184_prior,SYN-AGY001-00184_renewal
+AGY001,42,1.5,routine,False,199,SYN-AGY001-00199,test client 1199,2026-10-15,3596.06,3779.13,5.1,premium increase,False,SYN-AGY001-00199_prior,SYN-AGY001-00199_renewal
+AGY001,43,1.5,routine,False,7,SYN-AGY001-00007,test client 1007,2026-03-22,3955.36,4153.29,5.0,premium increase,True,SYN-AGY001-00007_prior,SYN-AGY001-00007_renewal
+AGY001,44,1.4,routine,False,187,SYN-AGY001-00187,test client 1187,2026-10-21,3426.01,3572.00,4.3,driver added,False,SYN-AGY001-00187_prior,SYN-AGY001-00187_renewal
+AGY001,45,1.4,routine,False,13,SYN-AGY001-00013,test client 1013,2026-01-30,1540.40,1606.78,4.3,vehicle changed,False,SYN-AGY001-00013_prior,SYN-AGY001-00013_renewal
+AGY001,46,1.4,routine,False,4,SYN-AGY001-00004,test client 1004,2026-12-26,2694.33,2802.78,4.0,vehicle changed,True,SYN-AGY001-00004_prior,SYN-AGY001-00004_renewal
+AGY001,47,1.2,routine,False,19,SYN-AGY001-00019,test client 1019,2026-05-08,3804.06,3866.50,1.6,vehicle changed,False,SYN-AGY001-00019_prior,SYN-AGY001-00019_renewal
+AGY001,48,1.1,routine,False,169,SYN-AGY001-00169,test client 1169,2026-02-10,4057.91,4098.88,1.0,driver added,True,SYN-AGY001-00169_prior,SYN-AGY001-00169_renewal
+AGY001,49,0.5,routine,False,109,SYN-AGY001-00109,test client 1109,2026-04-30,4181.75,4387.85,4.9,,True,SYN-AGY001-00109_prior,SYN-AGY001-00109_renewal
+AGY001,50,0.5,routine,False,67,SYN-AGY001-00067,test client 1067,2026-03-16,1610.99,1690.45,4.9,,False,SYN-AGY001-00067_prior,SYN-AGY001-00067_renewal
+AGY001,51,0.5,routine,False,46,SYN-AGY001-00046,test client 1046,2026-03-19,3847.73,4034.19,4.8,,True,SYN-AGY001-00046_prior,SYN-AGY001-00046_renewal
+AGY001,52,0.5,routine,False,124,SYN-AGY001-00124,test client 1124,2026-01-04,2337.26,2449.98,4.8,,False,SYN-AGY001-00124_prior,SYN-AGY001-00124_renewal
+AGY001,53,0.5,routine,False,157,SYN-AGY001-00157,test client 1157,2026-05-08,2405.51,2513.25,4.5,,True,SYN-AGY001-00157_prior,SYN-AGY001-00157_renewal
+AGY001,54,0.4,routine,False,193,SYN-AGY001-00193,test client 1193,2026-07-06,2968.42,3091.59,4.1,,True,SYN-AGY001-00193_prior,SYN-AGY001-00193_renewal
+AGY001,55,0.4,routine,False,61,SYN-AGY001-00061,test client 1061,2026-06-09,2750.13,2855.66,3.8,,False,SYN-AGY001-00061_prior,SYN-AGY001-00061_renewal
+AGY001,56,0.4,routine,True,25,SYN-AGY001-00025,test client 1025,2026-09-16,3812.19,3948.20,3.6,,True,SYN-AGY001-00025_prior,SYN-AGY001-00025_renewal
+AGY001,57,0.4,routine,False,79,SYN-AGY001-00079,test client 1079,2026-12-03,2386.44,2471.88,3.6,,False,SYN-AGY001-00079_prior,SYN-AGY001-00079_renewal
+AGY001,58,0.3,routine,False,10,SYN-AGY001-00010,test client 1010,2026-01-17,2759.16,2850.07,3.3,,False,SYN-AGY001-00010_prior,SYN-AGY001-00010_renewal
+AGY001,59,0.2,routine,False,28,SYN-AGY001-00028,test client 1028,2026-08-08,2128.44,2178.49,2.4,,True,SYN-AGY001-00028_prior,SYN-AGY001-00028_renewal
+AGY001,60,0.2,routine,False,97,SYN-AGY001-00097,test client 1097,2026-10-13,1980.38,2017.98,1.9,,True,SYN-AGY001-00097_prior,SYN-AGY001-00097_renewal
+AGY001,61,0.2,routine,True,172,SYN-AGY001-00172,test client 1172,2026-09-01,2270.66,2307.09,1.6,,True,SYN-AGY001-00172_prior,SYN-AGY001-00172_renewal
+AGY001,62,0.1,routine,False,112,SYN-AGY001-00112,test client 1112,2026-07-13,3653.02,3687.73,1.0,,False,SYN-AGY001-00112_prior,SYN-AGY001-00112_renewal
+AGY001,63,0.1,routine,False,175,SYN-AGY001-00175,test client 1175,2026-07-17,2030.31,2047.89,0.9,,False,SYN-AGY001-00175_prior,SYN-AGY001-00175_renewal
+AGY001,64,0.1,routine,False,103,SYN-AGY001-00103,test client 1103,2026-03-02,2807.06,2825.81,0.7,,False,SYN-AGY001-00103_prior,SYN-AGY001-00103_renewal
+AGY001,65,0.1,routine,False,136,SYN-AGY001-00136,test client 1136,2026-04-16,2187.04,2197.45,0.5,,False,SYN-AGY001-00136_prior,SYN-AGY001-00136_renewal
+AGY001,66,0.0,routine,False,37,SYN-AGY001-00037,test client 1037,2026-08-15,3138.88,3150.66,0.4,,False,SYN-AGY001-00037_prior,SYN-AGY001-00037_renewal
+AGY001,67,0.0,routine,False,85,SYN-AGY001-00085,test client 1085,2026-06-27,3393.07,3397.53,0.1,,False,SYN-AGY001-00085_prior,SYN-AGY001-00085_renewal
+AGY002,1,8.0,review now,False,8,SYN-AGY002-00008,test client 2008,2026-07-05,4051.46,5548.00,36.9,"large premium increase, deductible raised",False,SYN-AGY002-00008_prior,SYN-AGY002-00008_renewal
+AGY002,2,8.0,review now,True,29,SYN-AGY002-00029,test client 2029,2026-11-29,1958.21,2556.91,30.6,"large premium increase, deductible raised",True,SYN-AGY002-00029_prior,SYN-AGY002-00029_renewal
+AGY002,3,8.0,review now,False,89,SYN-AGY002-00089,test client 2089,2026-10-07,3653.13,4019.49,10.0,"premium increase, deductible raised, liability lowered",True,SYN-AGY002-00089_prior,SYN-AGY002-00089_renewal
+AGY002,4,7.0,review now,False,188,SYN-AGY002-00188,test client 2188,2026-03-01,3257.39,4530.88,39.1,"large premium increase, driver added",False,SYN-AGY002-00188_prior,SYN-AGY002-00188_renewal
+AGY002,5,7.0,review now,False,173,SYN-AGY002-00173,test client 2173,2026-04-19,2842.76,3868.64,36.1,"large premium increase, vehicle changed",False,SYN-AGY002-00173_prior,SYN-AGY002-00173_renewal
+AGY002,6,7.0,review now,False,26,SYN-AGY002-00026,test client 2026,2026-06-13,2472.50,3429.49,38.7,"large premium increase, driver added",False,SYN-AGY002-00026_prior,SYN-AGY002-00026_renewal
+AGY002,7,7.0,review now,False,155,SYN-AGY002-00155,test client 2155,2026-07-25,1461.04,1753.71,20.0,"large premium increase, carrier changed",False,SYN-AGY002-00155_prior,SYN-AGY002-00155_renewal
+AGY002,8,6.0,review now,False,101,SYN-AGY002-00101,test client 2101,2026-08-21,2710.46,3636.75,34.2,large premium increase,False,SYN-AGY002-00101_prior,SYN-AGY002-00101_renewal
+AGY002,9,6.0,review now,False,194,SYN-AGY002-00194,test client 2194,2026-01-24,2112.01,2770.91,31.2,large premium increase,False,SYN-AGY002-00194_prior,SYN-AGY002-00194_renewal
+AGY002,10,6.0,review now,False,17,SYN-AGY002-00017,test client 2017,2026-11-23,1427.08,1963.31,37.6,large premium increase,False,SYN-AGY002-00017_prior,SYN-AGY002-00017_renewal
+AGY002,11,6.0,review now,False,92,SYN-AGY002-00092,test client 2092,2026-03-10,1526.68,1994.84,30.7,large premium increase,False,SYN-AGY002-00092_prior,SYN-AGY002-00092_renewal
+AGY002,12,5.9,review now,False,77,SYN-AGY002-00077,test client 2077,2026-06-04,3622.92,3959.98,9.3,"premium increase, coverage dropped",False,SYN-AGY002-00077_prior,SYN-AGY002-00077_renewal
+AGY002,13,5.9,review now,False,14,SYN-AGY002-00014,test client 2014,2026-02-11,3275.23,3568.07,8.9,"premium increase, deductible raised, carrier changed",False,SYN-AGY002-00014_prior,SYN-AGY002-00014_renewal
+AGY002,14,5.7,review now,True,131,SYN-AGY002-00131,test client 2131,2026-02-02,1951.81,2478.58,27.0,large premium increase,True,SYN-AGY002-00131_prior,SYN-AGY002-00131_renewal
+AGY002,15,5.5,review now,False,134,SYN-AGY002-00134,test client 2134,2026-01-16,2905.30,3625.95,24.8,large premium increase,False,SYN-AGY002-00134_prior,SYN-AGY002-00134_renewal
+AGY002,16,5.3,review now,False,68,SYN-AGY002-00068,test client 2068,2026-02-04,1557.28,1605.17,3.1,"liability lowered, driver added",False,SYN-AGY002-00068_prior,SYN-AGY002-00068_renewal
+AGY002,17,4.9,review now,True,47,SYN-AGY002-00047,test client 2047,2026-06-18,1596.52,1900.38,19.0,large premium increase,True,SYN-AGY002-00047_prior,SYN-AGY002-00047_renewal
+AGY002,18,4.7,review now,True,146,SYN-AGY002-00146,test client 2146,2026-08-12,1724.76,1852.86,7.4,"premium increase, driver added, carrier changed",True,SYN-AGY002-00146_prior,SYN-AGY002-00146_renewal
+AGY002,19,4.7,review now,True,11,SYN-AGY002-00011,test client 2011,2026-01-28,2096.24,2457.09,17.2,large premium increase,True,SYN-AGY002-00011_prior,SYN-AGY002-00011_renewal
+AGY002,20,4.5,review now,False,83,SYN-AGY002-00083,test client 2083,2026-05-01,1829.63,1917.50,4.8,liability lowered,False,SYN-AGY002-00083_prior,SYN-AGY002-00083_renewal
+AGY002,21,4.4,review now,False,32,SYN-AGY002-00032,test client 2032,2026-10-31,3868.57,4022.89,4.0,coverage dropped,False,SYN-AGY002-00032_prior,SYN-AGY002-00032_renewal
+AGY002,22,4.3,review now,False,140,SYN-AGY002-00140,test client 2140,2026-02-12,3151.69,3233.55,2.6,coverage dropped,False,SYN-AGY002-00140_prior,SYN-AGY002-00140_renewal
+AGY002,23,4.2,review now,True,2,SYN-AGY002-00002,test client 2002,2026-05-23,2178.04,2228.07,2.3,"deductible raised, carrier changed",True,SYN-AGY002-00002_prior,SYN-AGY002-00002_renewal
+AGY002,24,4.2,review now,False,167,SYN-AGY002-00167,test client 2167,2026-04-16,3762.55,3832.04,1.8,coverage dropped,False,SYN-AGY002-00167_prior,SYN-AGY002-00167_renewal
+AGY002,25,4.2,review now,False,86,SYN-AGY002-00086,test client 2086,2026-11-10,3412.84,3471.63,1.7,liability lowered,False,SYN-AGY002-00086_prior,SYN-AGY002-00086_renewal
+AGY002,26,4.1,review now,False,128,SYN-AGY002-00128,test client 2128,2026-04-24,2495.18,2509.66,0.6,coverage dropped,False,SYN-AGY002-00128_prior,SYN-AGY002-00128_renewal
+AGY002,27,4.0,review now,False,23,SYN-AGY002-00023,test client 2023,2026-09-21,2269.17,2496.73,10.0,"premium increase, deductible raised",False,SYN-AGY002-00023_prior,SYN-AGY002-00023_renewal
+AGY002,28,3.4,review,False,182,SYN-AGY002-00182,test client 2182,2026-08-11,1413.07,1464.90,3.7,"vehicle changed, carrier changed",True,SYN-AGY002-00182_prior,SYN-AGY002-00182_renewal
+AGY002,29,3.1,review,True,80,SYN-AGY002-00080,test client 2080,2026-01-23,2515.03,2549.39,1.4,"deductible raised, vehicle changed",True,SYN-AGY002-00080_prior,SYN-AGY002-00080_renewal
+AGY002,30,3.1,review,False,176,SYN-AGY002-00176,test client 2176,2026-11-08,3784.44,4196.02,10.9,"premium increase, vehicle changed",False,SYN-AGY002-00176_prior,SYN-AGY002-00176_renewal
+AGY002,31,3.1,review,False,200,SYN-AGY002-00200,test client 2200,2026-04-26,2656.68,2946.85,10.9,"premium increase, driver added",False,SYN-AGY002-00200_prior,SYN-AGY002-00200_renewal
+AGY002,32,2.7,review,True,50,SYN-AGY002-00050,test client 2050,2026-10-29,4138.24,4428.06,7.0,"premium increase, driver added",True,SYN-AGY002-00050_prior,SYN-AGY002-00050_renewal
+AGY002,33,2.4,review,True,125,SYN-AGY002-00125,test client 2125,2026-11-21,2184.84,2264.28,3.6,carrier changed,True,SYN-AGY002-00125_prior,SYN-AGY002-00125_renewal
+AGY002,34,2.2,review,True,170,SYN-AGY002-00170,test client 2170,2026-02-04,2855.13,3190.72,11.8,premium increase,True,SYN-AGY002-00170_prior,SYN-AGY002-00170_renewal
+AGY002,35,2.1,review,False,38,SYN-AGY002-00038,test client 2038,2026-12-19,2206.69,2228.52,1.0,deductible raised,False,SYN-AGY002-00038_prior,SYN-AGY002-00038_renewal
+AGY002,36,2.0,review,False,164,SYN-AGY002-00164,test client 2164,2026-01-25,2780.63,2790.88,0.4,deductible raised,False,SYN-AGY002-00164_prior,SYN-AGY002-00164_renewal
+AGY002,37,2.0,review,False,149,SYN-AGY002-00149,test client 2149,2026-07-10,3652.15,3653.61,0.0,deductible raised,False,SYN-AGY002-00149_prior,SYN-AGY002-00149_renewal
+AGY002,38,1.9,routine,False,5,SYN-AGY002-00005,test client 2005,2026-06-11,2684.79,2914.79,8.6,premium increase,False,SYN-AGY002-00005_prior,SYN-AGY002-00005_renewal
+AGY002,39,1.8,routine,False,107,SYN-AGY002-00107,test client 2107,2026-02-11,4179.97,4499.94,7.7,premium increase,False,SYN-AGY002-00107_prior,SYN-AGY002-00107_renewal
+AGY002,40,1.7,routine,True,191,SYN-AGY002-00191,test client 2191,2026-05-08,3897.77,4182.94,7.3,premium increase,True,SYN-AGY002-00191_prior,SYN-AGY002-00191_renewal
+AGY002,41,1.7,routine,True,20,SYN-AGY002-00020,test client 2020,2026-06-19,4095.10,4372.87,6.8,premium increase,True,SYN-AGY002-00020_prior,SYN-AGY002-00020_renewal
+AGY002,42,1.6,routine,False,152,SYN-AGY002-00152,test client 2152,2026-07-21,4099.81,4362.98,6.4,premium increase,False,SYN-AGY002-00152_prior,SYN-AGY002-00152_renewal
+AGY002,43,1.6,routine,True,185,SYN-AGY002-00185,test client 2185,2026-12-20,2932.39,3107.16,6.0,premium increase,True,SYN-AGY002-00185_prior,SYN-AGY002-00185_renewal
+AGY002,44,1.6,routine,False,122,SYN-AGY002-00122,test client 2122,2026-03-09,2953.27,3118.44,5.6,premium increase,True,SYN-AGY002-00122_prior,SYN-AGY002-00122_renewal
+AGY002,45,1.5,routine,False,98,SYN-AGY002-00098,test client 2098,2026-01-22,3236.72,3410.06,5.4,premium increase,False,SYN-AGY002-00098_prior,SYN-AGY002-00098_renewal
+AGY002,46,1.3,routine,False,65,SYN-AGY002-00065,test client 2065,2026-07-23,3813.91,3931.78,3.1,driver added,False,SYN-AGY002-00065_prior,SYN-AGY002-00065_renewal
+AGY002,47,1.2,routine,False,62,SYN-AGY002-00062,test client 2062,2026-04-03,1417.10,1446.85,2.1,driver added,False,SYN-AGY002-00062_prior,SYN-AGY002-00062_renewal
+AGY002,48,1.2,routine,False,179,SYN-AGY002-00179,test client 2179,2026-04-03,2124.23,2156.85,1.5,driver added,False,SYN-AGY002-00179_prior,SYN-AGY002-00179_renewal
+AGY002,49,1.1,routine,False,56,SYN-AGY002-00056,test client 2056,2026-06-20,1980.04,1992.91,0.6,driver added,False,SYN-AGY002-00056_prior,SYN-AGY002-00056_renewal
+AGY002,50,1.0,routine,False,116,SYN-AGY002-00116,test client 2116,2026-11-19,2816.05,2817.72,0.1,vehicle changed,False,SYN-AGY002-00116_prior,SYN-AGY002-00116_renewal
+AGY002,51,0.5,routine,True,113,SYN-AGY002-00113,test client 2113,2026-12-23,2945.82,3090.36,4.9,,True,SYN-AGY002-00113_prior,SYN-AGY002-00113_renewal
+AGY002,52,0.5,routine,False,104,SYN-AGY002-00104,test client 2104,2026-11-07,3304.96,3454.16,4.5,,False,SYN-AGY002-00104_prior,SYN-AGY002-00104_renewal
+AGY002,53,0.4,routine,False,161,SYN-AGY002-00161,test client 2161,2026-12-06,2303.29,2405.74,4.4,,False,SYN-AGY002-00161_prior,SYN-AGY002-00161_renewal
+AGY002,54,0.4,routine,False,110,SYN-AGY002-00110,test client 2110,2026-05-21,2787.74,2892.90,3.8,,False,SYN-AGY002-00110_prior,SYN-AGY002-00110_renewal
+AGY002,55,0.4,routine,False,53,SYN-AGY002-00053,test client 2053,2026-12-11,3289.54,3404.85,3.5,,False,SYN-AGY002-00053_prior,SYN-AGY002-00053_renewal
+AGY002,56,0.3,routine,False,197,SYN-AGY002-00197,test client 2197,2026-11-16,3220.24,3327.66,3.3,,False,SYN-AGY002-00197_prior,SYN-AGY002-00197_renewal
+AGY002,57,0.3,routine,False,95,SYN-AGY002-00095,test client 2095,2026-09-26,2078.15,2141.69,3.1,,False,SYN-AGY002-00095_prior,SYN-AGY002-00095_renewal
+AGY002,58,0.3,routine,False,35,SYN-AGY002-00035,test client 2035,2026-04-27,2895.58,2978.69,2.9,,False,SYN-AGY002-00035_prior,SYN-AGY002-00035_renewal
+AGY002,59,0.2,routine,False,41,SYN-AGY002-00041,test client 2041,2026-08-12,2333.26,2386.32,2.3,,False,SYN-AGY002-00041_prior,SYN-AGY002-00041_renewal
+AGY002,60,0.2,routine,False,71,SYN-AGY002-00071,test client 2071,2026-12-06,2454.70,2506.67,2.1,,False,SYN-AGY002-00071_prior,SYN-AGY002-00071_renewal
+AGY002,61,0.2,routine,False,59,SYN-AGY002-00059,test client 2059,2026-05-31,1720.36,1754.66,2.0,,False,SYN-AGY002-00059_prior,SYN-AGY002-00059_renewal
+AGY002,62,0.2,routine,False,143,SYN-AGY002-00143,test client 2143,2026-05-22,3852.32,3926.65,1.9,,False,SYN-AGY002-00143_prior,SYN-AGY002-00143_renewal
+AGY002,63,0.2,routine,False,158,SYN-AGY002-00158,test client 2158,2026-07-03,3239.22,3296.68,1.8,,False,SYN-AGY002-00158_prior,SYN-AGY002-00158_renewal
+AGY002,64,0.1,routine,False,44,SYN-AGY002-00044,test client 2044,2026-08-22,2823.07,2862.99,1.4,,False,SYN-AGY002-00044_prior,SYN-AGY002-00044_renewal
+AGY002,65,0.1,routine,False,119,SYN-AGY002-00119,test client 2119,2026-01-24,4000.55,4048.65,1.2,,True,SYN-AGY002-00119_prior,SYN-AGY002-00119_renewal
+AGY002,66,0.1,routine,False,137,SYN-AGY002-00137,test client 2137,2026-03-06,3532.13,3548.57,0.5,,False,SYN-AGY002-00137_prior,SYN-AGY002-00137_renewal
+AGY002,67,0.1,routine,False,74,SYN-AGY002-00074,test client 2074,2026-10-20,2876.89,2891.65,0.5,,False,SYN-AGY002-00074_prior,SYN-AGY002-00074_renewal
+AGY003,1,9.1,review now,False,123,SYN-AGY003-00123,test client 3123,2026-07-14,2780.75,3356.17,20.7,"large premium increase, coverage dropped",True,SYN-AGY003-00123_prior,SYN-AGY003-00123_renewal
+AGY003,2,8.0,review now,False,132,SYN-AGY003-00132,test client 3132,2026-10-30,2068.00,2855.08,38.1,"large premium increase, deductible raised",False,SYN-AGY003-00132_prior,SYN-AGY003-00132_renewal
+AGY003,3,8.0,review now,False,36,SYN-AGY003-00036,test client 3036,2026-04-05,2521.98,3292.49,30.6,"large premium increase, deductible raised",False,SYN-AGY003-00036_prior,SYN-AGY003-00036_renewal
+AGY003,4,7.7,review now,False,69,SYN-AGY003-00069,test client 3069,2026-01-22,2731.76,3455.85,26.5,"large premium increase, deductible raised",False,SYN-AGY003-00069_prior,SYN-AGY003-00069_renewal
+AGY003,5,7.0,review now,False,105,SYN-AGY003-00105,test client 3105,2026-06-17,3032.81,4044.52,33.4,"large premium increase, vehicle changed",False,SYN-AGY003-00105_prior,SYN-AGY003-00105_renewal
+AGY003,6,6.6,review now,False,60,SYN-AGY003-00060,test client 3060,2026-06-10,1655.43,2083.51,25.9,"large premium increase, driver added",False,SYN-AGY003-00060_prior,SYN-AGY003-00060_renewal
+AGY003,7,6.2,review now,False,78,SYN-AGY003-00078,test client 3078,2026-12-07,2923.43,2975.63,1.8,"deductible raised, coverage dropped",False,SYN-AGY003-00078_prior,SYN-AGY003-00078_renewal
+AGY003,8,6.2,review now,False,66,SYN-AGY003-00066,test client 3066,2026-05-05,3837.47,4286.74,11.7,"premium increase, liability lowered",False,SYN-AGY003-00066_prior,SYN-AGY003-00066_renewal
+AGY003,9,6.0,review now,False,72,SYN-AGY003-00072,test client 3072,2026-04-03,4199.93,5494.88,30.8,large premium increase,False,SYN-AGY003-00072_prior,SYN-AGY003-00072_renewal
+AGY003,10,6.0,review now,False,12,SYN-AGY003-00012,test client 3012,2026-03-27,3926.84,5178.91,31.9,large premium increase,False,SYN-AGY003-00012_prior,SYN-AGY003-00012_renewal
+AGY003,11,6.0,review now,False,165,SYN-AGY003-00165,test client 3165,2026-06-13,3886.21,5117.64,31.7,large premium increase,True,SYN-AGY003-00165_prior,SYN-AGY003-00165_renewal
+AGY003,12,6.0,review now,False,30,SYN-AGY003-00030,test client 3030,2026-02-25,4036.12,5230.10,29.6,large premium increase,False,SYN-AGY003-00030_prior,SYN-AGY003-00030_renewal
+AGY003,13,5.8,review now,False,57,SYN-AGY003-00057,test client 3057,2026-01-14,2306.56,2954.52,28.1,large premium increase,False,SYN-AGY003-00057_prior,SYN-AGY003-00057_renewal
+AGY003,14,5.7,review now,False,81,SYN-AGY003-00081,test client 3081,2026-04-06,2146.82,2720.06,26.7,large premium increase,False,SYN-AGY003-00081_prior,SYN-AGY003-00081_renewal
+AGY003,15,5.6,review now,False,51,SYN-AGY003-00051,test client 3051,2026-11-22,1672.06,1779.16,6.4,"premium increase, liability lowered",False,SYN-AGY003-00051_prior,SYN-AGY003-00051_renewal
+AGY003,16,5.4,review now,False,99,SYN-AGY003-00099,test client 3099,2026-02-21,3558.14,4401.70,23.7,large premium increase,False,SYN-AGY003-00099_prior,SYN-AGY003-00099_renewal
+AGY003,17,5.2,review now,False,147,SYN-AGY003-00147,test client 3147,2026-05-18,2161.55,2639.75,22.1,large premium increase,False,SYN-AGY003-00147_prior,SYN-AGY003-00147_renewal
+AGY003,18,4.9,review now,False,195,SYN-AGY003-00195,test client 3195,2026-12-04,2885.02,3435.52,19.1,large premium increase,True,SYN-AGY003-00195_prior,SYN-AGY003-00195_renewal
+AGY003,19,4.8,review now,False,54,SYN-AGY003-00054,test client 3054,2026-01-20,3884.33,4598.13,18.4,large premium increase,False,SYN-AGY003-00054_prior,SYN-AGY003-00054_renewal
+AGY003,20,4.7,review now,False,198,SYN-AGY003-00198,test client 3198,2026-09-25,3276.71,3826.39,16.8,large premium increase,False,SYN-AGY003-00198_prior,SYN-AGY003-00198_renewal
+AGY003,21,4.4,review now,False,171,SYN-AGY003-00171,test client 3171,2026-02-21,2472.52,2582.49,4.4,"deductible raised, carrier changed",False,SYN-AGY003-00171_prior,SYN-AGY003-00171_renewal
+AGY003,22,4.4,review now,False,42,SYN-AGY003-00042,test client 3042,2026-07-26,1551.77,1620.11,4.4,coverage dropped,True,SYN-AGY003-00042_prior,SYN-AGY003-00042_renewal
+AGY003,23,4.2,review now,False,75,SYN-AGY003-00075,test client 3075,2026-03-24,4049.96,4125.88,1.9,coverage dropped,False,SYN-AGY003-00075_prior,SYN-AGY003-00075_renewal
+AGY003,24,4.2,review now,True,93,SYN-AGY003-00093,test client 3093,2026-07-11,3086.90,3442.50,11.5,"premium increase, deductible raised",True,SYN-AGY003-00093_prior,SYN-AGY003-00093_renewal
+AGY003,25,4.2,review now,False,90,SYN-AGY003-00090,test client 3090,2026-09-21,1743.06,1944.14,11.5,"premium increase, deductible raised",False,SYN-AGY003-00090_prior,SYN-AGY003-00090_renewal
+AGY003,26,4.1,review now,False,6,SYN-AGY003-00006,test client 3006,2026-03-20,2468.53,2501.46,1.3,coverage dropped,False,SYN-AGY003-00006_prior,SYN-AGY003-00006_renewal
+AGY003,27,2.9,review,False,192,SYN-AGY003-00192,test client 3192,2026-10-09,2643.73,2877.53,8.8,"premium increase, vehicle changed",False,SYN-AGY003-00192_prior,SYN-AGY003-00192_renewal
+AGY003,28,2.5,review,False,24,SYN-AGY003-00024,test client 3024,2026-03-17,1892.48,1985.96,4.9,deductible raised,False,SYN-AGY003-00024_prior,SYN-AGY003-00024_renewal
+AGY003,29,2.4,review,False,126,SYN-AGY003-00126,test client 3126,2026-07-29,3244.26,3356.46,3.5,deductible raised,True,SYN-AGY003-00126_prior,SYN-AGY003-00126_renewal
+AGY003,30,2.3,review,False,21,SYN-AGY003-00021,test client 3021,2026-12-18,3978.16,4088.44,2.8,deductible raised,False,SYN-AGY003-00021_prior,SYN-AGY003-00021_renewal
+AGY003,31,2.3,review,False,150,SYN-AGY003-00150,test client 3150,2026-06-05,4121.20,4232.79,2.7,carrier changed,False,SYN-AGY003-00150_prior,SYN-AGY003-00150_renewal
+AGY003,32,2.1,review,False,141,SYN-AGY003-00141,test client 3141,2026-06-25,1598.32,1608.96,0.7,deductible raised,False,SYN-AGY003-00141_prior,SYN-AGY003-00141_renewal
+AGY003,33,2.0,review,False,9,SYN-AGY003-00009,test client 3009,2026-12-20,3219.66,3231.09,0.4,deductible raised,False,SYN-AGY003-00009_prior,SYN-AGY003-00009_renewal
+AGY003,34,2.0,review,False,180,SYN-AGY003-00180,test client 3180,2026-05-31,3825.90,3836.24,0.3,deductible raised,True,SYN-AGY003-00180_prior,SYN-AGY003-00180_renewal
+AGY003,35,2.0,review,False,144,SYN-AGY003-00144,test client 3144,2026-11-01,1769.55,1775.53,0.3,carrier changed,True,SYN-AGY003-00144_prior,SYN-AGY003-00144_renewal
+AGY003,36,1.9,routine,False,138,SYN-AGY003-00138,test client 3138,2026-06-17,3259.60,3554.45,9.0,premium increase,True,SYN-AGY003-00138_prior,SYN-AGY003-00138_renewal
+AGY003,37,1.8,routine,False,168,SYN-AGY003-00168,test client 3168,2026-08-27,3506.26,3784.32,7.9,premium increase,False,SYN-AGY003-00168_prior,SYN-AGY003-00168_renewal
+AGY003,38,1.8,routine,False,156,SYN-AGY003-00156,test client 3156,2026-12-16,2169.95,2336.63,7.7,premium increase,True,SYN-AGY003-00156_prior,SYN-AGY003-00156_renewal
+AGY003,39,1.8,routine,False,102,SYN-AGY003-00102,test client 3102,2026-02-14,2736.87,2942.60,7.5,premium increase,False,SYN-AGY003-00102_prior,SYN-AGY003-00102_renewal
+AGY003,40,1.7,routine,True,174,SYN-AGY003-00174,test client 3174,2026-04-12,3964.61,4255.99,7.3,premium increase,True,SYN-AGY003-00174_prior,SYN-AGY003-00174_renewal
+AGY003,41,1.5,routine,False,153,SYN-AGY003-00153,test client 3153,2026-03-26,2900.59,3053.81,5.3,premium increase,False,SYN-AGY003-00153_prior,SYN-AGY003-00153_renewal
+AGY003,42,1.5,routine,False,27,SYN-AGY003-00027,test client 3027,2026-06-02,2014.38,2118.90,5.2,premium increase,False,SYN-AGY003-00027_prior,SYN-AGY003-00027_renewal
+AGY003,43,1.5,routine,False,120,SYN-AGY003-00120,test client 3120,2026-03-13,2623.85,2754.07,5.0,vehicle changed,False,SYN-AGY003-00120_prior,SYN-AGY003-00120_renewal
+AGY003,44,1.5,routine,True,162,SYN-AGY003-00162,test client 3162,2026-03-31,3440.73,3607.18,4.8,driver added,True,SYN-AGY003-00162_prior,SYN-AGY003-00162_renewal
+AGY003,45,1.4,routine,False,108,SYN-AGY003-00108,test client 3108,2026-06-27,3666.54,3795.47,3.5,vehicle changed,False,SYN-AGY003-00108_prior,SYN-AGY003-00108_renewal
+AGY003,46,1.3,routine,False,111,SYN-AGY003-00111,test client 3111,2026-12-29,2555.50,2623.94,2.7,driver added,False,SYN-AGY003-00111_prior,SYN-AGY003-00111_renewal
+AGY003,47,1.2,routine,False,177,SYN-AGY003-00177,test client 3177,2026-06-22,3237.13,3302.54,2.0,driver added,False,SYN-AGY003-00177_prior,SYN-AGY003-00177_renewal
+AGY003,48,1.1,routine,False,117,SYN-AGY003-00117,test client 3117,2026-12-12,2868.28,2903.16,1.2,driver added,False,SYN-AGY003-00117_prior,SYN-AGY003-00117_renewal
+AGY003,49,0.5,routine,False,15,SYN-AGY003-00015,test client 3015,2026-05-16,2197.96,2300.36,4.7,,False,SYN-AGY003-00015_prior,SYN-AGY003-00015_renewal
+AGY003,50,0.5,routine,False,45,SYN-AGY003-00045,test client 3045,2026-10-03,4011.99,4195.22,4.6,,True,SYN-AGY003-00045_prior,SYN-AGY003-00045_renewal
+AGY003,51,0.4,routine,False,189,SYN-AGY003-00189,test client 3189,2026-08-04,1690.40,1764.77,4.4,,False,SYN-AGY003-00189_prior,SYN-AGY003-00189_renewal
+AGY003,52,0.4,routine,False,84,SYN-AGY003-00084,test client 3084,2026-09-23,3371.31,3491.56,3.6,,False,SYN-AGY003-00084_prior,SYN-AGY003-00084_renewal
+AGY003,53,0.4,routine,False,33,SYN-AGY003-00033,test client 3033,2026-05-22,3416.21,3534.37,3.5,,False,SYN-AGY003-00033_prior,SYN-AGY003-00033_renewal
+AGY003,54,0.3,routine,False,129,SYN-AGY003-00129,test client 3129,2026-06-25,2733.26,2825.80,3.4,,False,SYN-AGY003-00129_prior,SYN-AGY003-00129_renewal
+AGY003,55,0.3,routine,False,114,SYN-AGY003-00114,test client 3114,2026-06-10,2130.17,2199.89,3.3,,False,SYN-AGY003-00114_prior,SYN-AGY003-00114_renewal
+AGY003,56,0.3,routine,True,48,SYN-AGY003-00048,test client 3048,2026-01-29,2083.75,2144.51,2.9,,True,SYN-AGY003-00048_prior,SYN-AGY003-00048_renewal
+AGY003,57,0.3,routine,False,87,SYN-AGY003-00087,test client 3087,2026-09-15,1861.04,1912.30,2.8,,False,SYN-AGY003-00087_prior,SYN-AGY003-00087_renewal
+AGY003,58,0.3,routine,False,159,SYN-AGY003-00159,test client 3159,2026-10-31,3361.57,3444.00,2.5,,False,SYN-AGY003-00159_prior,SYN-AGY003-00159_renewal
+AGY003,59,0.3,routine,False,39,SYN-AGY003-00039,test client 3039,2026-03-18,1864.58,1911.24,2.5,,True,SYN-AGY003-00039_prior,SYN-AGY003-00039_renewal
+AGY003,60,0.2,routine,False,135,SYN-AGY003-00135,test client 3135,2026-04-22,2659.25,2705.87,1.8,,True,SYN-AGY003-00135_prior,SYN-AGY003-00135_renewal
+AGY003,61,0.2,routine,False,183,SYN-AGY003-00183,test client 3183,2026-09-15,2234.97,2275.12,1.8,,False,SYN-AGY003-00183_prior,SYN-AGY003-00183_renewal
+AGY003,62,0.1,routine,False,96,SYN-AGY003-00096,test client 3096,2026-09-23,2455.11,2487.56,1.3,,False,SYN-AGY003-00096_prior,SYN-AGY003-00096_renewal
+AGY003,63,0.1,routine,False,186,SYN-AGY003-00186,test client 3186,2026-02-28,3728.20,3771.91,1.2,,True,SYN-AGY003-00186_prior,SYN-AGY003-00186_renewal
+AGY003,64,0.1,routine,False,3,SYN-AGY003-00003,test client 3003,2026-11-18,1594.75,1607.72,0.8,,True,SYN-AGY003-00003_prior,SYN-AGY003-00003_renewal
+AGY003,65,0.1,routine,True,63,SYN-AGY003-00063,test client 3063,2026-06-16,1840.75,1851.23,0.6,,True,SYN-AGY003-00063_prior,SYN-AGY003-00063_renewal
+AGY003,66,0.0,routine,False,18,SYN-AGY003-00018,test client 3018,2026-12-16,3875.58,3880.38,0.1,,True,SYN-AGY003-00018_prior,SYN-AGY003-00018_renewal

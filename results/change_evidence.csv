@@ -1,0 +1,208 @@
+pair_id,agency_id,change_type,field,prior_value,prior_document_id,prior_page,prior_evidence,prior_evidence_verified,renewal_value,renewal_document_id,renewal_page,renewal_evidence,renewal_evidence_verified
+1,AGY001,deductible_raised,collision_deductible,500,SYN-AGY001-00001_prior,2,Deductible $500,True,1000,SYN-AGY001-00001_renewal,2,"Deductible $1,000",True
+4,AGY001,vehicle_changed,vehicle,toyota rav4,SYN-AGY001-00004_prior,1,Vehicle 2021 Toyota RAV4,True,chevrolet equinox,SYN-AGY001-00004_renewal,1,2026 Chevrolet Equinox,True
+7,AGY001,premium_increase,annual_premium,3955.36,SYN-AGY001-00007_prior,2,"Total Annual Premium $3,955.36",True,4153.29,SYN-AGY001-00007_renewal,2,"Total Annual Premium $4,153.29",True
+13,AGY001,vehicle_changed,vehicle,nissan rogue,SYN-AGY001-00013_prior,1,Nissan Rogue,True,toyota rav4,SYN-AGY001-00013_renewal,1,2026 Toyota RAV4,True
+16,AGY001,premium_increase,annual_premium,3093.52,SYN-AGY001-00016_prior,2,"$3,093.52",True,3308.11,SYN-AGY001-00016_renewal,2,"$3,308.11",True
+19,AGY001,vehicle_changed,vehicle,mazda cx-5,SYN-AGY001-00019_prior,1,2014 Mazda CX-5,True,chevrolet equinox,SYN-AGY001-00019_renewal,1,2016 Chevrolet Equinox,True
+22,AGY001,premium_increase,annual_premium,3734.43,SYN-AGY001-00022_prior,2,"3,734.43",True,4172.06,SYN-AGY001-00022_renewal,2,"$4,172.06",True
+31,AGY001,large_premium_increase,annual_premium,3702.53,SYN-AGY001-00031_prior,2,"Total Annual Premium $3,702.53",True,5013.11,SYN-AGY001-00031_renewal,2,"$5,013.11",True
+34,AGY001,premium_increase,annual_premium,2670.49,SYN-AGY001-00034_prior,2,"$2,670.49",True,2855.70,SYN-AGY001-00034_renewal,2,"$2,855.70",True
+40,AGY001,carrier_changed,carrier,boreal assurance,SYN-AGY001-00040_prior,1,Boreal Assurance (fictional),True,huron general,SYN-AGY001-00040_renewal,1,Huron General (fictional),True
+43,AGY001,premium_increase,annual_premium,1438.29,SYN-AGY001-00043_prior,2,"1,438.29",True,1581.23,SYN-AGY001-00043_renewal,2,"$1,581.23",True
+49,AGY001,large_premium_increase,annual_premium,3297.31,SYN-AGY001-00049_prior,2,"Total Annual Premium $3,297.31",True,4129.31,SYN-AGY001-00049_renewal,2,"$4,129.31",True
+52,AGY001,large_premium_increase,annual_premium,4096.10,SYN-AGY001-00052_prior,2,"Total Annual Premium $4,096.10",True,4765.16,SYN-AGY001-00052_renewal,2,"Total Annual Premium $4,765.16",True
+55,AGY001,large_premium_increase,annual_premium,3795.26,SYN-AGY001-00055_prior,2,"$3,795.26",True,4816.69,SYN-AGY001-00055_renewal,2,"$4,816.69",True
+58,AGY001,deductible_raised,collision_deductible,1000,SYN-AGY001-00058_prior,2,"$1,000",True,1500,SYN-AGY001-00058_renewal,2,"$1,500",True
+58,AGY001,driver_added,drivers,2,SYN-AGY001-00058_prior,1,2,True,3,SYN-AGY001-00058_renewal,1,3,True
+64,AGY001,carrier_changed,carrier,boreal assurance,SYN-AGY001-00064_prior,1,Boreal Assurance (fictional),True,huron general,SYN-AGY001-00064_renewal,1,Huron General (fictional),True
+64,AGY001,premium_increase,annual_premium,2506.74,SYN-AGY001-00064_prior,2,"$2,506.74",True,2662.91,SYN-AGY001-00064_renewal,2,"$2,662.91",True
+70,AGY001,large_premium_increase,annual_premium,3212.45,SYN-AGY001-00070_prior,2,"$3,212.45",True,4175.73,SYN-AGY001-00070_renewal,2,"$4,175.73",True
+73,AGY001,premium_increase,annual_premium,2550.40,SYN-AGY001-00073_prior,2,"Total Annual Premium $2,550.40",True,2761.65,SYN-AGY001-00073_renewal,2,"$2,761.65",True
+76,AGY001,deductible_raised,collision_deductible,500,SYN-AGY001-00076_prior,2,$500,True,1000,SYN-AGY001-00076_renewal,2,"$1,000",True
+76,AGY001,driver_added,drivers,1,SYN-AGY001-00076_prior,1,1,True,2,SYN-AGY001-00076_renewal,1,"Listed Drivers
+2",True
+82,AGY001,carrier_changed,carrier,huron general,SYN-AGY001-00082_prior,1,Insurer Huron Genera!,True,boreal assurance,SYN-AGY001-00082_renewal,1,Boreal Assurance (fictional),True
+82,AGY001,premium_increase,annual_premium,3190.51,SYN-AGY001-00082_prior,2,"Total Annual Premium $3,190.51",True,3501.48,SYN-AGY001-00082_renewal,2,"$3,501.48",True
+88,AGY001,driver_added,drivers,1,SYN-AGY001-00088_prior,1,1,True,2,SYN-AGY001-00088_renewal,1,2,True
+88,AGY001,vehicle_changed,vehicle,toyota rav4,SYN-AGY001-00088_prior,1,2020 Toyota RAV4,True,subaru outback,SYN-AGY001-00088_renewal,1,2023 Subaru Outback,True
+91,AGY001,coverage_dropped,optional_coverages,"collision_or_upset,comprehensive",SYN-AGY001-00091_prior,2,"Collision or Upset
+Deductible $1,000
+Comprehensive
+Deductible $500",True,collision_or_upset,SYN-AGY001-00091_renewal,2,"Collision or Upset
+Deductible $1,000",True
+94,AGY001,carrier_changed,carrier,boreal assurance,SYN-AGY001-00094_prior,1,Boreal Assurance (fictional),True,trillium mutual,SYN-AGY001-00094_renewal,1,Trillium Mutual (fictional),True
+100,AGY001,large_premium_increase,annual_premium,3870.29,SYN-AGY001-00100_prior,2,"3,870.29",True,4498.14,SYN-AGY001-00100_renewal,2,"$4,498.14",True
+106,AGY001,liability_lowered,liability_limit,2000000,SYN-AGY001-00106_prior,2,"$2,000,000",True,1000000,SYN-AGY001-00106_renewal,2,"$1,000,000",True
+106,AGY001,premium_increase,annual_premium,4183.55,SYN-AGY001-00106_prior,2,"$4,183.55",True,4515.83,SYN-AGY001-00106_renewal,2,"$4,515.83",True
+115,AGY001,premium_increase,annual_premium,1791.88,SYN-AGY001-00115_prior,2,"$1,791.88",True,1887.56,SYN-AGY001-00115_renewal,2,"$1,887.56",True
+118,AGY001,large_premium_increase,annual_premium,2947.56,SYN-AGY001-00118_prior,2,"$2,947.56",True,3792.80,SYN-AGY001-00118_renewal,2,"$3,792.80",True
+121,AGY001,premium_increase,annual_premium,2227.06,SYN-AGY001-00121_prior,2,"$2,227.06",True,2485.42,SYN-AGY001-00121_renewal,2,"Total Annual Premium $2,485.42",True
+127,AGY001,deductible_raised,collision_deductible,500,SYN-AGY001-00127_prior,2,Collision Deductible (if added) $500,True,1000,SYN-AGY001-00127_renewal,2,"$1,000",True
+130,AGY001,coverage_dropped,optional_coverages,comprehensive,SYN-AGY001-00130_prior,2,"Comprehensive
+Deductible $500",True,,SYN-AGY001-00130_renewal,2,"Collision Deductible (if added) $1,000",True
+130,AGY001,premium_increase,annual_premium,2049.20,SYN-AGY001-00130_prior,2,"$2,049.20",True,2252.75,SYN-AGY001-00130_renewal,2,"Total Annual Premium $2,252.75",True
+133,AGY001,deductible_raised,collision_deductible,1000,SYN-AGY001-00133_prior,2,"$1,000",True,1500,SYN-AGY001-00133_renewal,2,"Collision Deductible (if added)
+$1,500",True
+133,AGY001,premium_increase,annual_premium,1550.11,SYN-AGY001-00133_prior,2,"$1,550.11",True,1718.75,SYN-AGY001-00133_renewal,2,"Total Annual Premium
+$1,718.75",True
+139,AGY001,large_premium_increase,annual_premium,4002.41,SYN-AGY001-00139_prior,2,"$4,002.41",True,5484.83,SYN-AGY001-00139_renewal,2,"$5,484.83",True
+142,AGY001,driver_added,drivers,2,SYN-AGY001-00142_prior,1,2,True,3,SYN-AGY001-00142_renewal,1,3,True
+142,AGY001,premium_increase,annual_premium,3422.81,SYN-AGY001-00142_prior,2,"$3,422.81",True,3685.96,SYN-AGY001-00142_renewal,2,"$3,685.96",True
+145,AGY001,coverage_dropped,optional_coverages,collision_or_upset,SYN-AGY001-00145_prior,2,"Collision or Upset
+Deductible $1,000",True,,SYN-AGY001-00145_renewal,2,Collision Deductible (if added),True
+148,AGY001,premium_increase,annual_premium,2720.94,SYN-AGY001-00148_prior,2,"$2,720.94",True,2936.27,SYN-AGY001-00148_renewal,2,"$2,936.27",True
+151,AGY001,premium_increase,annual_premium,4091.32,SYN-AGY001-00151_prior,2,"$4,091.32",True,4510.08,SYN-AGY001-00151_renewal,2,"$4,510.08",True
+154,AGY001,driver_added,drivers,2,SYN-AGY001-00154_prior,1,Listed Drivers 2,True,3,SYN-AGY001-00154_renewal,1,3,True
+154,AGY001,large_premium_increase,annual_premium,3696.25,SYN-AGY001-00154_prior,2,"Total Annual Premium $3,696.25",True,4342.36,SYN-AGY001-00154_renewal,2,"$4,342.36",True
+160,AGY001,premium_increase,annual_premium,3970.11,SYN-AGY001-00160_prior,2,"3,970.11",True,4383.82,SYN-AGY001-00160_renewal,2,"$4,383.82",True
+160,AGY001,vehicle_changed,vehicle,hyundai elantra,SYN-AGY001-00160_prior,1,Hyundai Elantra,True,kia sorento,SYN-AGY001-00160_renewal,1,2018 Kia Sorento,True
+163,AGY001,deductible_raised,collision_deductible,500,SYN-AGY001-00163_prior,2,Collision or Upset Deductible $500,True,1000,SYN-AGY001-00163_renewal,2,"Deductible $1,000",True
+163,AGY001,large_premium_increase,annual_premium,4150.66,SYN-AGY001-00163_prior,2,"Total Annual Premium $4,150.66",True,4882.30,SYN-AGY001-00163_renewal,2,"$4,882.30",True
+166,AGY001,premium_increase,annual_premium,2188.26,SYN-AGY001-00166_prior,2,"$2,188.26",True,2389.61,SYN-AGY001-00166_renewal,2,"$2,389.61",True
+169,AGY001,driver_added,drivers,1,SYN-AGY001-00169_prior,1,"Listed Drivers
+1",True,2,SYN-AGY001-00169_renewal,1,Listed Drivers 2,True
+178,AGY001,large_premium_increase,annual_premium,2487.17,SYN-AGY001-00178_prior,2,"$2,487.17",True,3286.17,SYN-AGY001-00178_renewal,2,"3,286.17",True
+181,AGY001,driver_added,drivers,2,SYN-AGY001-00181_prior,1,2,True,3,SYN-AGY001-00181_renewal,1,"Listed Drivers
+3",True
+181,AGY001,large_premium_increase,annual_premium,3814.70,SYN-AGY001-00181_prior,2,"$3,814.70",True,4952.65,SYN-AGY001-00181_renewal,2,"$4,952.65",True
+184,AGY001,premium_increase,annual_premium,1461.36,SYN-AGY001-00184_prior,2,"$1,461.36",True,1539.33,SYN-AGY001-00184_renewal,2,"$1,539.33",True
+187,AGY001,driver_added,drivers,3,SYN-AGY001-00187_prior,1,"Listed Drivers
+3",True,4,SYN-AGY001-00187_renewal,1,4,True
+190,AGY001,large_premium_increase,annual_premium,3233.93,SYN-AGY001-00190_prior,2,"$3,233.93",True,4285.53,SYN-AGY001-00190_renewal,2,"Total Annual Premium $4,285.53",True
+196,AGY001,deductible_raised,collision_deductible,1000,SYN-AGY001-00196_prior,2,"Collision Deductible (if added) $1,000",True,1500,SYN-AGY001-00196_renewal,2,"Collision Deductible (if added) $1,500",True
+199,AGY001,premium_increase,annual_premium,3596.06,SYN-AGY001-00199_prior,2,"$3,596.06",True,3779.13,SYN-AGY001-00199_renewal,2,"$3,779.13",True
+2,AGY002,carrier_changed,carrier,boreal assurance,SYN-AGY002-00002_prior,1,COMPANY......: BOREAL ASSURANCE (FICTIONAL),True,trillium mutual,SYN-AGY002-00002_renewal,1,COMPANY......: TRILLIUM MUTUAL (FICTIONAL),True
+2,AGY002,deductible_raised,collision_deductible,1000,SYN-AGY002-00002_prior,3,COLLISION DEDUCTIBLE ......... 1000.00 CAD,True,1500,SYN-AGY002-00002_renewal,3,COLLISION DEDUCTIBLE +seeeeees 1500.00 CAD,True
+5,AGY002,premium_increase,annual_premium,2684.79,SYN-AGY002-00005_prior,3,TOTAL PREMIUM (12 MOS) ....... 2684.79 CAD,True,2914.79,SYN-AGY002-00005_renewal,3,TOTAL PREMIUM (12 MOS) ....... 2914.79 CAD,True
+8,AGY002,deductible_raised,collision_deductible,500,SYN-AGY002-00008_prior,3,COLLISION DEDUCTIBLE ......... 500.00 CAD,True,1000,SYN-AGY002-00008_renewal,3,COLLISION DEDUCTIBLE ......... 1000.00 CAD,True
+8,AGY002,large_premium_increase,annual_premium,4051.46,SYN-AGY002-00008_prior,3,TOTAL PREMIUM (12 MOS) ....... 4051.46 CAD,True,5548.00,SYN-AGY002-00008_renewal,3,TOTAL PREMIUM (12 MOS) ....... 5548.00 CAD,True
+11,AGY002,large_premium_increase,annual_premium,2096.24,SYN-AGY002-00011_prior,3,TOTAL PREMIUM (12 MOS) ....... 2096.24 CAD,True,2457.09,SYN-AGY002-00011_renewal,3,TOTAL PREMIUM (12 MOS) ....... 2457.09 CAD,True
+14,AGY002,carrier_changed,carrier,boreal assurance,SYN-AGY002-00014_prior,1,COMPANY......: BOREAL ASSURANCE (FICTIONAL),True,trillium mutual,SYN-AGY002-00014_renewal,1,COMPANY......: TRILLIUM MUTUAL (FICTIONAL),True
+14,AGY002,deductible_raised,collision_deductible,1000,SYN-AGY002-00014_prior,3,COLLISION DEDUCTIBLE ......... 1000.00 CAD,True,1500,SYN-AGY002-00014_renewal,3,COLLISION DEDUCTIBLE ......... 1500.00 CAD,True
+14,AGY002,premium_increase,annual_premium,3275.23,SYN-AGY002-00014_prior,3,TOTAL PREMIUM (12 MOS) ....... 3275.23 CAD,True,3568.07,SYN-AGY002-00014_renewal,3,TOTAL PREMIUM (12 MOS) ....... 3568.07 CAD,True
+17,AGY002,large_premium_increase,annual_premium,1427.08,SYN-AGY002-00017_prior,3,TOTAL PREMIUM (12 MOS) ....... 1427.08 CAD,True,1963.31,SYN-AGY002-00017_renewal,3,TOTAL PREMIUM (12 MOS) ....... 1963.31 CAD,True
+20,AGY002,premium_increase,annual_premium,4095.10,SYN-AGY002-00020_prior,3,TOTAL PREMIUM (12 MOS) ....... 4095.10 CAD,True,4372.87,SYN-AGY002-00020_renewal,3,TOTAL PREMIUM (12 MOS) ....... 4372.87 CAD,True
+23,AGY002,deductible_raised,collision_deductible,500,SYN-AGY002-00023_prior,3,COLLISION DEDUCTIBLE ......... 500.00 CAD,True,1000,SYN-AGY002-00023_renewal,3,COLLISION DEDUCTIBLE ......... 1000.00 CAD,True
+23,AGY002,premium_increase,annual_premium,2269.17,SYN-AGY002-00023_prior,3,TOTAL PREMIUM (12 MOS) ....... 2269.17 CAD,True,2496.73,SYN-AGY002-00023_renewal,3,TOTAL PREMIUM (12 MOS) ....... 2496.73 CAD,True
+26,AGY002,driver_added,drivers,1,SYN-AGY002-00026_prior,2,NO. OF OPERATORS: 1,True,2,SYN-AGY002-00026_renewal,2,NO. OF OPERATORS: 2,True
+26,AGY002,large_premium_increase,annual_premium,2472.50,SYN-AGY002-00026_prior,3,TOTAL PREMIUM (12 MOS) ....... 2472.50 CAD,True,3429.49,SYN-AGY002-00026_renewal,3,TOTAL PREMIUM (12 MOS) ....... 3429.49 CAD,True
+29,AGY002,deductible_raised,collision_deductible,500,SYN-AGY002-00029_prior,3,500.08,True,1000,SYN-AGY002-00029_renewal,3,COLLISION DEDUCTIBLE ......... 1000.00 CAD,True
+29,AGY002,large_premium_increase,annual_premium,1958.21,SYN-AGY002-00029_prior,3,1958.21,True,2556.91,SYN-AGY002-00029_renewal,3,TOTAL PREMIUM (12 MOS) ....... 2556.91 CAD,True
+32,AGY002,coverage_dropped,optional_coverages,"all_perils,comprehensive",SYN-AGY002-00032_prior,3,"ALL PERILS (Sec. 7.2) ... INCLUDED
+  COMPREHENSIVE (Sec. 7.4) ... INCLUDED",True,all_perils,SYN-AGY002-00032_renewal,3,ALL PERILS (Sec. 7.2) ... INCLUDED,True
+38,AGY002,deductible_raised,collision_deductible,500,SYN-AGY002-00038_prior,3,COLLISION DEDUCTIBLE ......... 500.00 CAD,True,1000,SYN-AGY002-00038_renewal,3,COLLISION DEDUCTIBLE ......... 1000.00 CAD,True
+47,AGY002,large_premium_increase,annual_premium,1596.52,SYN-AGY002-00047_prior,3,TOTAL PREMIUM (12 MOS) ..----- 1596.52 CAD,True,1900.38,SYN-AGY002-00047_renewal,3,TOTAL PREMIUM (12 MOS) ....... 1900.38 CAD,True
+50,AGY002,driver_added,drivers,1,SYN-AGY002-00050_prior,2,NO. OF OPERATORS: 1,True,2,SYN-AGY002-00050_renewal,2,NO. OF OPERATORS: 2,True
+50,AGY002,premium_increase,annual_premium,4138.24,SYN-AGY002-00050_prior,3,TOTAL PREMIUM (12 MOS) ....... 4138.24 CAD,True,4428.06,SYN-AGY002-00050_renewal,3,TOTAL PREMIUM (12 MOS) ....... 4428.06 CAD,True
+56,AGY002,driver_added,drivers,3,SYN-AGY002-00056_prior,2,NO. OF OPERATORS: 3,True,4,SYN-AGY002-00056_renewal,2,NO. OF OPERATORS: 4,True
+62,AGY002,driver_added,drivers,2,SYN-AGY002-00062_prior,2,NO. OF OPERATORS: 2,True,3,SYN-AGY002-00062_renewal,2,NO. OF OPERATORS: 3,True
+65,AGY002,driver_added,drivers,1,SYN-AGY002-00065_prior,2,NO. OF OPERATORS: 1,True,2,SYN-AGY002-00065_renewal,2,NO. OF OPERATORS: 2,True
+68,AGY002,driver_added,drivers,3,SYN-AGY002-00068_prior,2,NO. OF OPERATORS: 3,True,4,SYN-AGY002-00068_renewal,2,NO. OF OPERATORS: 4,True
+68,AGY002,liability_lowered,liability_limit,2000000,SYN-AGY002-00068_prior,3,SEC 3 LIABILITY LIMIT ........ 2000000.00 CAD,True,1000000,SYN-AGY002-00068_renewal,3,SEC 3 LIABILITY LIMIT ........ 1000000.00 CAD,True
+77,AGY002,coverage_dropped,optional_coverages,"collision_or_upset,comprehensive",SYN-AGY002-00077_prior,3,"COLLISION/UPSET (Sec. 7.3) ... INCLUDED
+  COMPREHENSIVE (Sec. 7.4) ... INCLUDED",True,collision_or_upset,SYN-AGY002-00077_renewal,3,COLLISION/UPSET (Sec. 7.3) ... INCLUDED,True
+77,AGY002,premium_increase,annual_premium,3622.92,SYN-AGY002-00077_prior,3,TOTAL PREMIUM (12 MOS) ....... 3622.92 CAD,True,3959.98,SYN-AGY002-00077_renewal,3,TOTAL PREMIUM (12 MOS) ....... 3959.98 CAD,True
+80,AGY002,deductible_raised,collision_deductible,1000,SYN-AGY002-00080_prior,3,COLLISION DEDUCTIBLE .....---- 1000.06 CAD,True,1506,SYN-AGY002-00080_renewal,3,COLLISION DEOQUCTIBLE ......... 1506.00 CAD,True
+80,AGY002,vehicle_changed,vehicle,hyundai elantra,SYN-AGY002-00080_prior,2,YR/MAKE/MODEL: 2012 HYUNDAI ELANTRA,True,subaru outback,SYN-AGY002-00080_renewal,2,YR/MAKE/MODEL: 2016 SUBARU OUTBACK,True
+83,AGY002,liability_lowered,liability_limit,2000000,SYN-AGY002-00083_prior,3,SEC 3 LIABILITY LIMIT ........ 2000000.00 CAD,True,1000000,SYN-AGY002-00083_renewal,3,SEC 3 LIABILITY LIMIT ........ 1000000.00 CAD,True
+86,AGY002,liability_lowered,liability_limit,2000000,SYN-AGY002-00086_prior,3,SEC 3 LIABILITY LIMIT ........ 2000000.00 CAD,True,1000000,SYN-AGY002-00086_renewal,3,SEC 3 LIABILITY LIMIT ........ 1000000.00 CAD,True
+89,AGY002,deductible_raised,collision_deductible,1000,SYN-AGY002-00089_prior,3,COLLISION DEDUCTIBLE ......... 1006.06 CAD,True,1500,SYN-AGY002-00089_renewal,3,COLLISION DEDUCTIBLE ......... 1500.00 CAD,True
+89,AGY002,liability_lowered,liability_limit,2000000,SYN-AGY002-00089_prior,3,SEC 3 LIABILITY LIMIT ........ 2000000.00 CAD,True,1000000,SYN-AGY002-00089_renewal,3,SEC 3 LIABILITY LIMIT ........ 1000000.00 CAD,True
+89,AGY002,premium_increase,annual_premium,3653.13,SYN-AGY002-00089_prior,3,TOTAL PREMIUM (12 MOS) ....... 3653.13 CAD,True,4019.49,SYN-AGY002-00089_renewal,3,TOTAL PREMIUM (12 MOS) ....... 4019.49 CAD,True
+92,AGY002,large_premium_increase,annual_premium,1526.68,SYN-AGY002-00092_prior,3,TOTAL PREMIUM (12 MOS) ....... 1526.68 CAD,True,1994.84,SYN-AGY002-00092_renewal,3,TOTAL PREMIUM (12 MOS) ....... 1994.84 CAD,True
+98,AGY002,premium_increase,annual_premium,3236.72,SYN-AGY002-00098_prior,3,TOTAL PREMIUM (12 MOS) ....... 3236.72 CAD,True,3410.06,SYN-AGY002-00098_renewal,3,TOTAL PREMIUM (12 MOS) ....... 3410.06 CAD,True
+101,AGY002,large_premium_increase,annual_premium,2710.46,SYN-AGY002-00101_prior,3,TOTAL PREMIUM (12 MOS) ....... 2710.46 CAD,True,3636.75,SYN-AGY002-00101_renewal,3,TOTAL PREMIUM (12 MOS) ....... 3636.75 CAD,True
+107,AGY002,premium_increase,annual_premium,4179.97,SYN-AGY002-00107_prior,3,TOTAL PREMIUM (12 MOS) ....... 4179.97 CAD,True,4499.94,SYN-AGY002-00107_renewal,3,TOTAL PREMIUM (12 MOS) ....... 4499.94 CAD,True
+116,AGY002,vehicle_changed,vehicle,hyundai elantra,SYN-AGY002-00116_prior,2,YR/MAKE/MODEL: 2013 HYUNDAI ELANTRA,True,chevrolet equinox,SYN-AGY002-00116_renewal,2,YR/MAKE/MODEL: 2019 CHEVROLET EQUINOX,True
+122,AGY002,premium_increase,annual_premium,2953.27,SYN-AGY002-00122_prior,3,TOTAL PREMIUM (12 MOS) ....... 2953.27 CAD,True,3118.44,SYN-AGY002-00122_renewal,3,TOTAL PREMIUM (12 MOS) ......- 3118.44 CAD,True
+125,AGY002,carrier_changed,carrier,boreal assurance,SYN-AGY002-00125_prior,1,COMPANY. .....: BOREAL ASSURANCE (FICTIONAL),True,trillium mutual,SYN-AGY002-00125_renewal,1,COMPANY. .....: TRILLIUM MUTUAL (FICTIONAL),True
+128,AGY002,coverage_dropped,optional_coverages,collision_or_upset,SYN-AGY002-00128_prior,3,COLLISION/UPSET (Sec. 7.3) ... INCLUDED,True,,SYN-AGY002-00128_renewal,3,OPTIONAL COVERAGES ............ NONE,True
+131,AGY002,large_premium_increase,annual_premium,1951.81,SYN-AGY002-00131_prior,3,TOTAL PREMIUM (12 MOS) ....... 1951.81 CAD,True,2478.58,SYN-AGY002-00131_renewal,3,TOTAL PREMIUM (12 MOS) ....... 2478.58 CAD,True
+134,AGY002,large_premium_increase,annual_premium,2905.30,SYN-AGY002-00134_prior,3,TOTAL PREMIUM (12 MOS) ....... 2905.30 CAD,True,3625.95,SYN-AGY002-00134_renewal,3,TOTAL PREMIUM (12 MOS) ....... 3625.95 CAD,True
+140,AGY002,coverage_dropped,optional_coverages,specified_perils,SYN-AGY002-00140_prior,3,SPECIFIED PERILS (Sec. 7.5) ... INCLUDED,True,,SYN-AGY002-00140_renewal,3,COLLISION DEDUCTIBLE ......... 500.00 CAD,True
+146,AGY002,carrier_changed,carrier,boreal assurance,SYN-AGY002-00146_prior,1,COMPANY......: BOREAL ASSURANCE (FICTIONAL),True,huron general,SYN-AGY002-00146_renewal,1,COMPANY......: HURON GENERAL (FICTIONAL),True
+146,AGY002,driver_added,drivers,2,SYN-AGY002-00146_prior,2,NO. OF OPERATORS: 2,True,3,SYN-AGY002-00146_renewal,2,"NO, OF OPERATORS: 3",True
+146,AGY002,premium_increase,annual_premium,1724.76,SYN-AGY002-00146_prior,3,TOTAL PREMIUM (12 MOS) ....... 1724.76 CAD,True,1852.86,SYN-AGY002-00146_renewal,3,TOTAL PREMIUM (12 MOS) ....... 1852.86 CAD,True
+149,AGY002,deductible_raised,collision_deductible,500,SYN-AGY002-00149_prior,3,COLLISION DEDUCTIBLE ......... 500.00 CAD,True,1000,SYN-AGY002-00149_renewal,3,COLLISION DEDUCTIBLE ......... 1000.00 CAD,True
+152,AGY002,premium_increase,annual_premium,4099.81,SYN-AGY002-00152_prior,3,TOTAL PREMIUM (12 MOS) ....... 4099.81 CAD,True,4362.98,SYN-AGY002-00152_renewal,3,TOTAL PREMIUM (12 MOS) ....... 4362.98 CAD,True
+155,AGY002,carrier_changed,carrier,trillium mutual,SYN-AGY002-00155_prior,1,COMPANY......: TRILLIUM MUTUAL (FICTIONAL),True,boreal assurance,SYN-AGY002-00155_renewal,1,COMPANY......: BOREAL ASSURANCE (FICTIONAL),True
+155,AGY002,large_premium_increase,annual_premium,1461.04,SYN-AGY002-00155_prior,3,TOTAL PREMIUM (12 MOS) ....... 1461.04 CAD,True,1753.71,SYN-AGY002-00155_renewal,3,TOTAL PREMIUM (12 MOS) ....... 1753.71 CAD,True
+164,AGY002,deductible_raised,collision_deductible,500,SYN-AGY002-00164_prior,3,COLLISION DEDUCTIBLE ......... 500.00 CAD,True,1000,SYN-AGY002-00164_renewal,3,COLLISION DEDUCTIBLE ......... 1000.00 CAD,True
+167,AGY002,coverage_dropped,optional_coverages,collision_or_upset,SYN-AGY002-00167_prior,3,COLLISION/UPSET (Sec. 7.3) ... INCLUDED,True,,SYN-AGY002-00167_renewal,3,OPTIONAL COVERAGES ............ NONE,True
+170,AGY002,premium_increase,annual_premium,2855.13,SYN-AGY002-00170_prior,3,TOTAL PREMIUM (12 MOS) ....... 2855.13 CAD,True,3190.72,SYN-AGY002-00170_renewal,3,TOTAL PREMIUM (12 MOS) ....... 3190.72 CAD,True
+173,AGY002,large_premium_increase,annual_premium,2842.76,SYN-AGY002-00173_prior,3,TOTAL PREMIUM (12 MOS) ....... 2842.76 CAD,True,3868.64,SYN-AGY002-00173_renewal,3,TOTAL PREMIUM (12 MOS) ....... 3868.64 CAD,True
+173,AGY002,vehicle_changed,vehicle,kia sorento,SYN-AGY002-00173_prior,2,2023 KIA SORENTO,True,honda civic,SYN-AGY002-00173_renewal,2,YR/MAKE/MODEL: 2026 HONDA CIVIC,True
+176,AGY002,premium_increase,annual_premium,3784.44,SYN-AGY002-00176_prior,3,TOTAL PREMIUM (12 MOS) ....... 3784.44 CAD,True,4196.02,SYN-AGY002-00176_renewal,3,TOTAL PREMIUM (12 MOS) ....... 4196.02 CAD,True
+176,AGY002,vehicle_changed,vehicle,mazda cx-5,SYN-AGY002-00176_prior,2,2023 MAZDA CX-5,True,chevrolet equinox,SYN-AGY002-00176_renewal,2,YR/MAKE/MODEL: 2026 CHEVROLET EQUINOX,True
+179,AGY002,driver_added,drivers,3,SYN-AGY002-00179_prior,2,NO. OF OPERATORS: 3,True,4,SYN-AGY002-00179_renewal,2,NO. OF OPERATORS: 4,True
+182,AGY002,carrier_changed,carrier,boreal assurance,SYN-AGY002-00182_prior,1,COMPANY......: BOREAL ASSURANCE (FICTIONAL),True,huron general,SYN-AGY002-00182_renewal,1,COMPANY......: HURON GENERAL (FICTIONAL),True
+182,AGY002,vehicle_changed,vehicle,kia sorento,SYN-AGY002-00182_prior,2,YR/MAKE/MODEL: 2018 KIA SORENTO,True,chevrolet equinox,SYN-AGY002-00182_renewal,2,YR/MAKE/MODEL: 2021 CHEVROLET EQUINOX,True
+185,AGY002,premium_increase,annual_premium,2932.39,SYN-AGY002-00185_prior,3,TOTAL PREMIUM (12 MOS) ....... 2932.39 CAD,True,3107.16,SYN-AGY002-00185_renewal,3,TOTAL PREMIUM (12 MOS) .------ 3107.16 CAD,True
+188,AGY002,driver_added,drivers,1,SYN-AGY002-00188_prior,2,NO. OF OPERATORS: 1,True,2,SYN-AGY002-00188_renewal,2,NO. OF OPERATORS: 2,True
+188,AGY002,large_premium_increase,annual_premium,3257.39,SYN-AGY002-00188_prior,3,TOTAL PREMIUM (12 MOS) ....... 3257.39 CAD,True,4530.88,SYN-AGY002-00188_renewal,3,TOTAL PREMIUM (12 MOS) ....... 4530.88 CAD,True
+191,AGY002,premium_increase,annual_premium,3897.77,SYN-AGY002-00191_prior,3,TOTAL PREMIUM (12 MOS) ......- 3897.77 CAD,True,4182.94,SYN-AGY002-00191_renewal,3,TOTAL PREMIUM (12 MOS) ....... 4182.94 CAD,True
+194,AGY002,large_premium_increase,annual_premium,2112.01,SYN-AGY002-00194_prior,3,TOTAL PREMIUM (12 MOS) ....... 2112.01 CAD,True,2770.91,SYN-AGY002-00194_renewal,3,TOTAL PREMIUM (12 MOS) ....... 2770.91 CAD,True
+200,AGY002,driver_added,drivers,2,SYN-AGY002-00200_prior,2,NO. OF OPERATORS: 2,True,3,SYN-AGY002-00200_renewal,2,NO. OF OPERATORS: 3,True
+200,AGY002,premium_increase,annual_premium,2656.68,SYN-AGY002-00200_prior,3,TOTAL PREMIUM (12 MOS) ....... 2656.68 CAD,True,2946.85,SYN-AGY002-00200_renewal,3,TOTAL PREMIUM (12 MOS) ....... 2946.85 CAD,True
+6,AGY003,coverage_dropped,optional_coverages,collision_or_upset,SYN-AGY003-00006_prior,2,Optional coverages on this policy: collision / upset,True,,SYN-AGY003-00006_renewal,2,Optional coverages on this policy: none,True
+9,AGY003,deductible_raised,collision_deductible,1000,SYN-AGY003-00009_prior,2,"$ 1,000",True,1500,SYN-AGY003-00009_renewal,2,"$ 1,500",True
+12,AGY003,large_premium_increase,annual_premium,3926.84,SYN-AGY003-00012_prior,2,"3,926.84",True,5178.91,SYN-AGY003-00012_renewal,2,"5,178.91",True
+21,AGY003,deductible_raised,collision_deductible,500,SYN-AGY003-00021_prior,2,500,True,1000,SYN-AGY003-00021_renewal,2,"1,000",True
+24,AGY003,deductible_raised,collision_deductible,1000,SYN-AGY003-00024_prior,2,"collision deductible is $ 1,000",True,1500,SYN-AGY003-00024_renewal,2,"collision deductible is $ 1,500",True
+27,AGY003,premium_increase,annual_premium,2014.38,SYN-AGY003-00027_prior,2,"total yearly premium is $ 2,014.38",True,2118.90,SYN-AGY003-00027_renewal,2,"total yearly premium is $ 2,118.90",True
+30,AGY003,large_premium_increase,annual_premium,4036.12,SYN-AGY003-00030_prior,2,"The total yearly premium is $ 4,036.12.",True,5230.10,SYN-AGY003-00030_renewal,2,"5,230.10",True
+36,AGY003,deductible_raised,collision_deductible,500,SYN-AGY003-00036_prior,2,500,True,1000,SYN-AGY003-00036_renewal,2,"$ 1,000",True
+36,AGY003,large_premium_increase,annual_premium,2521.98,SYN-AGY003-00036_prior,2,"2,521.98",True,3292.49,SYN-AGY003-00036_renewal,2,"3,292.49",True
+42,AGY003,coverage_dropped,optional_coverages,"comprehensive,specified_perils",SYN-AGY003-00042_prior,2,"comprehensive cover, specified perils",True,comprehensive,SYN-AGY003-00042_renewal,2,comprehensive cover,True
+51,AGY003,liability_lowered,liability_limit,2000000,SYN-AGY003-00051_prior,2,"$ 2,000,000",True,1000000,SYN-AGY003-00051_renewal,2,"$ 1,000,000",True
+51,AGY003,premium_increase,annual_premium,1672.06,SYN-AGY003-00051_prior,2,"yearly premium is $ 1,672.06",True,1779.16,SYN-AGY003-00051_renewal,2,"1,779.16",True
+54,AGY003,large_premium_increase,annual_premium,3884.33,SYN-AGY003-00054_prior,2,"3,884.33",True,4598.13,SYN-AGY003-00054_renewal,2,"4,598.13",True
+57,AGY003,large_premium_increase,annual_premium,2306.56,SYN-AGY003-00057_prior,2,"yearly premium is $ 2,306.56",True,2954.52,SYN-AGY003-00057_renewal,2,"yearly premium is $ 2,954.52",True
+60,AGY003,driver_added,drivers,1,SYN-AGY003-00060_prior,1,1 driver(s) listed,True,2,SYN-AGY003-00060_renewal,1,2 driver(s),True
+60,AGY003,large_premium_increase,annual_premium,1655.43,SYN-AGY003-00060_prior,2,"$ 1,655.43",True,2083.51,SYN-AGY003-00060_renewal,2,"2,083.51",True
+66,AGY003,liability_lowered,liability_limit,2000000,SYN-AGY003-00066_prior,2,"$ 2,000,000",True,1000000,SYN-AGY003-00066_renewal,2,"$ 1,000,000",True
+66,AGY003,premium_increase,annual_premium,3837.47,SYN-AGY003-00066_prior,2,"3,837.47",True,4286.74,SYN-AGY003-00066_renewal,2,"$ 4,286.74",True
+69,AGY003,deductible_raised,collision_deductible,1000,SYN-AGY003-00069_prior,2,"Your collision deductible is $ 1,000.",True,1500,SYN-AGY003-00069_renewal,2,"$ 1,500",True
+69,AGY003,large_premium_increase,annual_premium,2731.76,SYN-AGY003-00069_prior,2,"The total yearly premium is $ 2,731.76.",True,3455.85,SYN-AGY003-00069_renewal,2,"3,455.85",True
+72,AGY003,large_premium_increase,annual_premium,4199.93,SYN-AGY003-00072_prior,2,"4,199.93",True,5494.88,SYN-AGY003-00072_renewal,2,"yearly premium is $ 5,494.88",True
+75,AGY003,coverage_dropped,optional_coverages,specified_perils,SYN-AGY003-00075_prior,2,Optional coverages on this policy: specified perils,True,,SYN-AGY003-00075_renewal,2,Optional coverages on this policy: none.,True
+78,AGY003,coverage_dropped,optional_coverages,all_perils,SYN-AGY003-00078_prior,2,all perils,True,,SYN-AGY003-00078_renewal,2,Optional coverages on this policy: none.,True
+78,AGY003,deductible_raised,collision_deductible,500,SYN-AGY003-00078_prior,2,$ 500,True,1000,SYN-AGY003-00078_renewal,2,"1,000",True
+81,AGY003,large_premium_increase,annual_premium,2146.82,SYN-AGY003-00081_prior,2,"yearly premium is $ 2,146.82.",True,2720.06,SYN-AGY003-00081_renewal,2,"total yearly premium is $ 2,720.06",True
+90,AGY003,deductible_raised,collision_deductible,500,SYN-AGY003-00090_prior,2,$ 500,True,1000,SYN-AGY003-00090_renewal,2,"$ 1,000",True
+90,AGY003,premium_increase,annual_premium,1743.06,SYN-AGY003-00090_prior,2,"1,743.06",True,1944.14,SYN-AGY003-00090_renewal,2,"1,944.14",True
+93,AGY003,deductible_raised,collision_deductible,500,SYN-AGY003-00093_prior,2,$ 500,True,1000,SYN-AGY003-00093_renewal,2,"collision deductible is $ 1,000",True
+93,AGY003,premium_increase,annual_premium,3086.90,SYN-AGY003-00093_prior,2,"3,086.90",True,3442.50,SYN-AGY003-00093_renewal,2,"yearly premium is $ 3,442.50",True
+99,AGY003,large_premium_increase,annual_premium,3558.14,SYN-AGY003-00099_prior,2,"3,558.14",True,4401.70,SYN-AGY003-00099_renewal,2,"$ 4,401.70",True
+102,AGY003,premium_increase,annual_premium,2736.87,SYN-AGY003-00102_prior,2,"$ 2,736.87",True,2942.60,SYN-AGY003-00102_renewal,2,"The total yearly premium is $ 2,942.60.",True
+105,AGY003,large_premium_increase,annual_premium,3032.81,SYN-AGY003-00105_prior,2,"yearly premium is $ 3,032.81",True,4044.52,SYN-AGY003-00105_renewal,2,"yearly premium is $ 4,044.52",True
+105,AGY003,vehicle_changed,vehicle,tesla model 3,SYN-AGY003-00105_prior,1,2019 Tesla Model 3,True,mazda cx-5,SYN-AGY003-00105_renewal,1,2024 Mazda CX-5,True
+108,AGY003,vehicle_changed,vehicle,ford f-150,SYN-AGY003-00108_prior,1,2016 Ford F-150,True,mazda cx-5,SYN-AGY003-00108_renewal,1,Mazda CX-5,True
+111,AGY003,driver_added,drivers,3,SYN-AGY003-00111_prior,1,3 driver(s),True,4,SYN-AGY003-00111_renewal,1,4 driver(s) listed,True
+117,AGY003,driver_added,drivers,1,SYN-AGY003-00117_prior,1,1 driver(s) listed,True,2,SYN-AGY003-00117_renewal,1,2 driver(s) listed,True
+120,AGY003,vehicle_changed,vehicle,toyota rav4,SYN-AGY003-00120_prior,1,Toyota RAV4,True,mazda cx-5,SYN-AGY003-00120_renewal,1,Mazda CX-5,True
+123,AGY003,coverage_dropped,optional_coverages,comprehensive,SYN-AGY003-00123_prior,2,comprehensive cover,True,,SYN-AGY003-00123_renewal,2,Optional coverages on this policy: none,True
+123,AGY003,large_premium_increase,annual_premium,2780.75,SYN-AGY003-00123_prior,2,"2,780.75",True,3356.17,SYN-AGY003-00123_renewal,2,"yearly premium is $ 3,356.17",True
+126,AGY003,deductible_raised,collision_deductible,500,SYN-AGY003-00126_prior,2,collision deductible is $ 500,True,1000,SYN-AGY003-00126_renewal,2,"$ 1,000",True
+132,AGY003,deductible_raised,collision_deductible,1000,SYN-AGY003-00132_prior,2,"1,000",True,1500,SYN-AGY003-00132_renewal,2,"Your collision deductible is $ 1,500.",True
+132,AGY003,large_premium_increase,annual_premium,2068.00,SYN-AGY003-00132_prior,2,"2,068",True,2855.08,SYN-AGY003-00132_renewal,2,"The total yearly premium is $ 2,855.08.",True
+138,AGY003,premium_increase,annual_premium,3259.60,SYN-AGY003-00138_prior,2,"3,259.60",True,3554.45,SYN-AGY003-00138_renewal,2,"$ 3,554.45",True
+141,AGY003,deductible_raised,collision_deductible,500,SYN-AGY003-00141_prior,2,$ 500,True,1000,SYN-AGY003-00141_renewal,2,"$ 1,000",True
+144,AGY003,carrier_changed,carrier,boreal assurance,SYN-AGY003-00144_prior,1,Boreal Assurance,True,huron general,SYN-AGY003-00144_renewal,1,Huron General,True
+147,AGY003,large_premium_increase,annual_premium,2161.55,SYN-AGY003-00147_prior,2,"$ 2,161.55",True,2639.75,SYN-AGY003-00147_renewal,2,"$ 2,639.75",True
+150,AGY003,carrier_changed,carrier,boreal assurance,SYN-AGY003-00150_prior,1,Boreal Assurance,True,trillium mutual,SYN-AGY003-00150_renewal,1,Trillium Mutual,True
+153,AGY003,premium_increase,annual_premium,2900.59,SYN-AGY003-00153_prior,2,"$ 2,900.59",True,3053.81,SYN-AGY003-00153_renewal,2,"3,053.81",True
+156,AGY003,premium_increase,annual_premium,2169.95,SYN-AGY003-00156_prior,2,"2,169.95",True,2336.63,SYN-AGY003-00156_renewal,2,"The total yearly premium is $ 2,336.63.",True
+162,AGY003,driver_added,drivers,1,SYN-AGY003-00162_prior,1,1 driver(s) listed,True,2,SYN-AGY003-00162_renewal,1,2 diverts),True
+165,AGY003,large_premium_increase,annual_premium,3886.21,SYN-AGY003-00165_prior,2,"$ 3,886.21",True,5117.64,SYN-AGY003-00165_renewal,2,"yearly premium is $ 5,117.64",True
+168,AGY003,premium_increase,annual_premium,3506.26,SYN-AGY003-00168_prior,2,"3,506.26",True,3784.32,SYN-AGY003-00168_renewal,2,"$ 3,784.32",True
+171,AGY003,carrier_changed,carrier,boreal assurance,SYN-AGY003-00171_prior,1,Boreal Assurance,True,huron general,SYN-AGY003-00171_renewal,1,Huron General,True
+171,AGY003,deductible_raised,collision_deductible,1000,SYN-AGY003-00171_prior,2,"$ 1,000",True,1500,SYN-AGY003-00171_renewal,2,"1,500",True
+174,AGY003,premium_increase,annual_premium,3964.61,SYN-AGY003-00174_prior,2,"yearly premium is $ 3,964.61",True,4255.99,SYN-AGY003-00174_renewal,2,"4,255.99",True
+177,AGY003,driver_added,drivers,2,SYN-AGY003-00177_prior,1,2 driver(s) listed,True,3,SYN-AGY003-00177_renewal,1,3 driver(s) listed,True
+180,AGY003,deductible_raised,collision_deductible,1000,SYN-AGY003-00180_prior,2,"collision deductible is $ 1,000",True,1500,SYN-AGY003-00180_renewal,2,"collision deductible is $ 1,500",True
+192,AGY003,premium_increase,annual_premium,2643.73,SYN-AGY003-00192_prior,2,"total yearly premium is $ 2,643.73.",True,2877.53,SYN-AGY003-00192_renewal,2,"2,877.53",True
+192,AGY003,vehicle_changed,vehicle,kia sorento,SYN-AGY003-00192_prior,1,2018 Kia Sorento,True,mazda cx-5,SYN-AGY003-00192_renewal,1,Mazda CX-5,True
+195,AGY003,large_premium_increase,annual_premium,2885.02,SYN-AGY003-00195_prior,2,"$ 2,885.02",True,3435.52,SYN-AGY003-00195_renewal,2,"3,435.52",True
+198,AGY003,large_premium_increase,annual_premium,3276.71,SYN-AGY003-00198_prior,2,"3,276.71",True,3826.39,SYN-AGY003-00198_renewal,2,"total yearly premium is $ 3,826.39",True
