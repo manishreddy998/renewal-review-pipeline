@@ -16,3 +16,14 @@ Everything runs in Docker.
 docker compose build
 docker compose run --rm app make smoke
 ```
+
+`make smoke` runs the tests, downloads the FSRA OAP 1 policy wording, builds the synthetic
+answer key, and runs dbt against local Delta tables.
+
+To run on Databricks later, copy `.env.example` to `.env`, fill in the workspace values, and run
+`dbt build --target databricks` from the `dbt` folder.
+
+## Docs
+
+- `docs/sources.md`: where the public data comes from and license notes
+- `docs/synthetic-data-plan.md`: how the test policies are made

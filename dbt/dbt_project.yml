@@ -1,0 +1,13 @@
+name: renewal_review
+version: "0.1.0"
+profile: renewal_review
+config-version: 2
+
+model-paths: ["models"]
+target-path: target
+
+models:
+  renewal_review:
+    +file_format: delta
+    staging:
+      +materialized: view

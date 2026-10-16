@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    pull_policy: build
+    image: renewal-review:dev
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./data:/app/data
+    command: make smoke

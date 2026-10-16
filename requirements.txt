@@ -1,0 +1,8 @@
+pyspark==3.5.3
+delta-spark==3.2.1
+dbt-core==1.9.4
+dbt-spark[session]==1.9.2
+dbt-databricks==1.9.7
+requests==2.32.3
+pypdf==5.1.0
+pytest==8.3.4
