@@ -79,6 +79,30 @@ recognition, turning a picture of text into text).
 - A few scanned numbers cannot be fixed from the page. Those accounts are now marked "needs data
   check", and all 7 of them are caught.
 
+## Final verdict
+
+**Does the approach work?** Yes, on this test set. Reading renewals with a model inside
+Databricks, cleaning the values in dbt, and comparing the two years finds every planted change
+with no false alarms, at about half a cent per document.
+
+**What it proves:**
+
+- Field extraction can run as an ordinary, incremental dbt model on Databricks (`ai_query`),
+  next to the data, with no separate service.
+- Every value can carry its page and quote, and a test can enforce that.
+- Agency isolation can be enforced in Unity Catalog (Databricks' permission layer) with a row
+  filter, and tested.
+- The pipeline knows when it might be wrong and sends those accounts to a person instead of
+  guessing.
+
+**Honest limits:**
+
+- The documents are synthetic. Real carrier PDFs are longer, messier and vary more.
+- 7 numbers on scanned pages are still wrong; they are flagged, not fixed.
+- The risk weights are a sensible start, not tuned with real broker decisions.
+- Row filter tests check the access rule; a live login as a broker is still a manual check.
+- Cost is an estimate at list price; Free Edition cost nothing.
+
 ## The problem
 
 - A mid size agency renews hundreds of auto policies a month, and each renewal comes as a PDF
