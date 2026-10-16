@@ -40,9 +40,39 @@ def policy_pairs() -> list[dict]:
                 "optional_coverages": ",".join(p["optional_coverages"]),
                 "drivers": p["drivers"],
                 "annual_premium": float(p["annual_premium"]),
+                "carrier": p["carrier"],
+                "effective_date": p["effective_date"],
+                "vehicle": p["vehicle"],
                 "planted_changes": ",".join(pair["planted_changes"]),
                 "stamp": p["stamp"],
             })
+    return rows
+
+
+def documents() -> list[dict]:
+    rows = json.loads(Path("data/synthetic/pdfs/documents.json").read_text())
+    return [{k: r[k] for k in ("document_id", "pair_id", "agency_id", "policy_version", "path", "scanned")}
+            for r in rows]
+
+
+def ams_policies() -> list[dict]:
+    """Policy list as an agency management system would export it: number, agency, client.
+
+    Agencies always know their own policy numbers, so we can use this list to repair
+    policy numbers that OCR garbled.
+    """
+    seen = {}
+    for pair in _jsonl(ANSWER_KEY):
+        p = pair["prior"]
+        seen[p["policy_number"]] = {"policy_number": p["policy_number"], "agency_id": pair["agency_id"],
+                                    "insured_name": p["insured_name"]}
+    return list(seen.values())
+
+
+def document_pages() -> list[dict]:
+    rows = _jsonl(Path("data/synthetic/document_pages.jsonl"))
+    for r in rows:
+        r["digit_words"] = json.dumps(r["digit_words"]) if r.get("digit_words") is not None else None
     return rows
 
 
@@ -56,5 +86,14 @@ TABLES = {
         "pair_id": "int", "agency_id": "string", "policy_version": "string",
         "policy_number": "string", "insured_name": "string", "vehicle_year": "int",
         "liability_limit": "bigint", "collision_deductible": "int", "optional_coverages": "string",
-        "drivers": "int", "annual_premium": "double", "planted_changes": "string", "stamp": "string"}),
+        "drivers": "int", "annual_premium": "double", "carrier": "string",
+        "effective_date": "date", "vehicle": "string", "planted_changes": "string", "stamp": "string"}),
+    "documents": (documents, {
+        "document_id": "string", "pair_id": "int", "agency_id": "string", "policy_version": "string",
+        "path": "string", "scanned": "boolean"}),
+    "ams_policies": (ams_policies, {
+        "policy_number": "string", "agency_id": "string", "insured_name": "string"}),
+    "document_pages": (document_pages, {
+        "document_id": "string", "page": "int", "text": "string", "text_method": "string",
+        "digit_words": "string"}),
 }
