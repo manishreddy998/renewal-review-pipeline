@@ -1,0 +1,11 @@
+[project]
+name = "renewal-review"
+version = "0.1.0"
+description = "Compare last year and renewal insurance policies and rank accounts that need a broker review."
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

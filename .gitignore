@@ -1,0 +1,25 @@
+# secrets
+.env
+*.pem
+*.key
+.databrickscfg
+secrets/
+*credentials*.json
+*service-account*.json
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# data and build output
+data/raw/
+data/synthetic/
+data/delta/
+spark-warehouse/
+metastore_db/
+derby.log
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
