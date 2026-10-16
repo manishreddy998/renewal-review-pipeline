@@ -8,4 +8,15 @@ services:
         required: false
     volumes:
       - ./data:/app/data
+      - ./results:/app/results
     command: make smoke
+
+  dashboard:
+    build: .
+    pull_policy: build
+    image: renewal-review:dev
+    volumes:
+      - ./results:/app/results
+    ports:
+      - "8501:8501"
+    command: streamlit run dashboard/app.py --server.address 0.0.0.0 --server.port 8501 --server.headless true
