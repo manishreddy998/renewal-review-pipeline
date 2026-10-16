@@ -11,3 +11,15 @@ models:
     +file_format: delta
     staging:
       +materialized: view
+    silver:
+      +materialized: table
+    gold:
+      +materialized: table
+    eval:
+      +materialized: table
+
+vars:
+  extraction_endpoint: databricks-gemini-3-5-flash
+  prompt_version: v4
+  # OCR words read with lower confidence than this are treated as unsure.
+  ocr_min_confidence: 60

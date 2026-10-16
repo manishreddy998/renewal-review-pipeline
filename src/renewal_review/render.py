@@ -117,6 +117,8 @@ def layout_caps(c, p, agency, version):
     c.drawString(50, y, f"  COLLISION DEDUCTIBLE ......... {p['collision_deductible']:.2f} CAD"); y -= 16
     for cov in p["optional_coverages"]:
         c.drawString(50, y, f"  {COVERAGE_LABELS[agency][cov]} ... INCLUDED"); y -= 16
+    if not p["optional_coverages"]:
+        c.drawString(50, y, "  OPTIONAL COVERAGES ............ NONE"); y -= 16
     c.drawString(50, y - 10, f"  TOTAL PREMIUM (12 MOS) ....... {money(agency, p['annual_premium'])}")
 
 
@@ -161,15 +163,15 @@ LAYOUTS = {"AGY001": layout_table, "AGY002": layout_caps, "AGY003": layout_lette
 
 
 def scan_look(pdf_bytes: bytes, rng: random.Random) -> bytes:
-    pages = convert_from_bytes(pdf_bytes, dpi=150)
+    pages = convert_from_bytes(pdf_bytes, dpi=100)
     out = []
     for img in pages:
-        img = img.convert("L").rotate(rng.uniform(-1.5, 1.5), expand=False, fillcolor=255)
+        img = img.convert("L").rotate(rng.uniform(-2.5, 2.5), expand=False, fillcolor=255)
         noise = Image.effect_noise(img.size, 22).convert("L")
-        img = Image.blend(img, noise, 0.12).filter(ImageFilter.GaussianBlur(0.6))
+        img = Image.blend(img, noise, 0.22).filter(ImageFilter.GaussianBlur(0.8))
         out.append(img.convert("RGB"))
     buf = io.BytesIO()
-    out[0].save(buf, format="PDF", save_all=True, append_images=out[1:], resolution=150)
+    out[0].save(buf, format="PDF", save_all=True, append_images=out[1:], resolution=100)
     return buf.getvalue()
 
 

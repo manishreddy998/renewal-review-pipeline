@@ -24,3 +24,4 @@ dbt/target/
 dbt/logs/
 dbt/dbt_packages/
 docker-compose.override.yml
+dbt/.user.yml
