@@ -14,7 +14,96 @@ its own clients. It runs on Databricks with Delta tables, Unity Catalog and dbt.
 
 ![Dashboard](docs/images/dashboard.png)
 
-## The problem
+## The problem we are trying to solve
+
+When a client's auto policy comes up for renewal, the carrier (the insurance company) sends a
+renewal offer. The broker, the person who looks after the client, should compare it with last
+year's policy before the client accepts. In practice a busy agency renews hundreds of policies a
+month and cannot read them all side by side.
+
+What slips through:
+
+- **Premium increase:** the yearly price goes up 20 or 30 percent and nobody shops it around.
+- **Coverage dropped:** an optional coverage, such as collision, quietly disappears. The client
+  finds out only after an accident.
+- **Higher deductible:** the amount the client pays first on a claim goes from $500 to $1,000.
+- **Lower liability limit:** the most the policy pays if the client injures someone drops from
+  $2M to $1M.
+
+Each one costs the client money or protection, and costs the agency trust.
+
+Companies like Quandri solve this with software that reads every renewal. For the data behind it
+to be trusted, three things matter:
+
+- **Per agency isolation (multi tenancy):** many agencies share one platform, and the data holds
+  client details (PII, personally identifiable information). One agency must never see another
+  agency's clients.
+- **Traceability (provenance):** every number shown to a broker must point back to the document
+  and page it came from, so it can be checked.
+- **No double counting (idempotency and dedup):** rerunning the pipeline or reloading a file must
+  not create duplicate policies or count a change twice.
+
+## What we found using the public data
+
+**Base wording.** We used the public FSRA Ontario Automobile Policy, OAP 1 (the standard owner's
+policy every Ontario insurer must use, July 2026 version, 68 pages) for real coverage names and
+section numbers. The PDF is downloaded from FSRA and checked by checksum, not stored here.
+
+**Test data.** Real policies are private, so we made 200 synthetic clients across 3 fictional
+agencies, each with last year's policy and a renewal (400 documents). We planted the changes
+ourselves, so the right answer is known (an answer key, or ground truth). The agencies use
+different layouts, and 71 documents are scanned looking images that need OCR (optical character
+recognition, turning a picture of text into text).
+
+**Measured results** on Databricks, all 400 documents:
+
+- **Field accuracy:** 99.84% of 4,400 fields right. 100% on digital PDFs, 99.1% on scans.
+- **Change detection:** 193 real changes, 100% precision (no false alarms) and 100% recall
+  (none missed).
+- **Work list:** the priority matches the answer key for 200 of 200 accounts.
+- **Traceability:** 100% of values cite a page that exists and quote text found on that page.
+- **Isolation:** 0 cross agency leaks across every broker and agency pair tested.
+- **No double counting:** every pair has exactly one last year and one renewal row (dbt test),
+  loads replace tables instead of appending, and extraction is incremental, keyed on the
+  document, a hash of its text and the prompt version, so a rerun never adds a second copy.
+- **Cost and speed:** $0.0048 per document at list price, about 0.43 seconds each in a batch.
+
+**Weak spots found and fixed:**
+
+- A "COLLISION DEDUCTIBLE" line was read as collision coverage. Dropped coverage precision went
+  from 65% to 100% after clearer rules and a text check.
+- OCR garbled policy numbers (`SYN-AGY@@2`). Matching to the agency's own policy list took them
+  from 73% to 100% on scans.
+- OCR garbled names (`huron genera!`). Matching to known carriers and vehicles fixed them.
+- OCR read years as 2625. Years after 2030 are corrected.
+- A few scanned numbers cannot be fixed from the page. Those accounts are now marked "needs data
+  check", and all 7 of them are caught.
+
+## Final verdict
+
+**Does the approach work?** Yes, on this test set. Reading renewals with a model inside
+Databricks, cleaning the values in dbt, and comparing the two years finds every planted change
+with no false alarms, at about half a cent per document.
+
+**What it proves:**
+
+- Field extraction can run as an ordinary, incremental dbt model on Databricks (`ai_query`),
+  next to the data, with no separate service.
+- Every value can carry its page and quote, and a test can enforce that.
+- Agency isolation can be enforced in Unity Catalog (Databricks' permission layer) with a row
+  filter, and tested.
+- The pipeline knows when it might be wrong and sends those accounts to a person instead of
+  guessing.
+
+**Honest limits:**
+
+- The documents are synthetic. Real carrier PDFs are longer, messier and vary more.
+- 7 numbers on scanned pages are still wrong; they are flagged, not fixed.
+- The risk weights are a sensible start, not tuned with real broker decisions.
+- Row filter tests check the access rule; a live login as a broker is still a manual check.
+- Cost is an estimate at list price; Free Edition cost nothing.
+
+## The problem in more detail
 
 - A mid size agency renews hundreds of auto policies a month, and each renewal comes as a PDF
   from a different carrier with a different layout. Some are scans.
