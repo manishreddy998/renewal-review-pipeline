@@ -1,10 +1,13 @@
-.PHONY: fetch synthetic load dbt smoke test check-databricks load-databricks dbt-databricks databricks
+.PHONY: fetch synthetic render load dbt smoke test check-databricks load-databricks dbt-databricks databricks
 
 fetch:
 	python -m renewal_review.fetch_sources
 
 synthetic:
 	python -m renewal_review.synthetic
+
+render:
+	python -m renewal_review.render
 
 load:
 	python -m renewal_review.load_raw --target local
@@ -15,7 +18,7 @@ dbt:
 test:
 	pytest -q
 
-smoke: test fetch synthetic load dbt
+smoke: test fetch synthetic render load dbt
 
 check-databricks:
 	python -m renewal_review.databricks_check
