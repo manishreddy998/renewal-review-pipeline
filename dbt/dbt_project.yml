@@ -18,6 +18,11 @@ models:
     eval:
       +materialized: table
 
+seeds:
+  renewal_review:
+    agency_access:
+      +post-hook: "{{ create_agency_row_filter() }}"
+
 vars:
   extraction_endpoint: databricks-gemini-3-5-flash
   prompt_version: v4

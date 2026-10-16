@@ -32,3 +32,13 @@ models:
               config:
                 where: "renewal_value is not null"
 
+  - name: renewal_queue_agy001
+  - name: renewal_queue_agy002
+  - name: renewal_queue_agy003
+
+seeds:
+  - name: agency_access
+    description: Which broker may see which agency. Used by the Unity Catalog row filter.
+    columns:
+      - name: principal
+        tests: [not_null, unique]

@@ -1,0 +1,5 @@
+principal,agency_id
+broker.a@maplelane.example,AGY001
+broker.b@maplelane.example,AGY001
+broker.a@lakeshore.example,AGY002
+broker.a@northbay.example,AGY003

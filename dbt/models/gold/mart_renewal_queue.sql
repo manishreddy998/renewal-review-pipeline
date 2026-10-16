@@ -1,3 +1,9 @@
+{{ config(
+    post_hook=[
+        "alter table {{ this }} set row filter {{ this.database }}.{{ this.schema }}.agency_row_filter on (agency_id)"
+    ]
+) }}
+
 -- The broker work list: one row per renewing account, ranked by risk inside each agency.
 {% set weights = flag_weights() %}
 with scored as (
