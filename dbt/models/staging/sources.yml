@@ -5,6 +5,8 @@ sources:
     schema: raw
     tables:
       - name: policy_sources
+      - name: policy_source_pages
+      - name: policy_pairs
 
 models:
   - name: stg_policy_sources
@@ -13,3 +15,31 @@ models:
         tests: [not_null, unique]
       - name: sha256
         tests: [not_null]
+
+  - name: stg_policy_source_pages
+    columns:
+      - name: source_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_policy_sources')
+              field: source_id
+      - name: page
+        tests: [not_null]
+
+  - name: stg_policy_pairs
+    columns:
+      - name: pair_id
+        tests: [not_null]
+      - name: agency_id
+        tests:
+          - accepted_values:
+              values: ['AGY001', 'AGY002', 'AGY003']
+      - name: policy_version
+        tests:
+          - accepted_values:
+              values: ['prior', 'renewal']
+      - name: stamp
+        tests:
+          - accepted_values:
+              values: ['SYNTHETIC TEST DATA, NOT A REAL POLICY']
