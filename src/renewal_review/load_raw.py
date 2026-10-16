@@ -17,8 +17,10 @@ def load_local() -> None:
     spark = get_spark()
     spark.sql("create schema if not exists raw")
     for name, (build, schema) in TABLES.items():
-        ddl = ", ".join(f"{c} {t}" for c, t in schema.items())
+        # Dates arrive as text, so load them as strings and cast in Spark.
+        ddl = ", ".join(f"{c} {'string' if t == 'date' else t}" for c, t in schema.items())
         df = spark.createDataFrame(build(), schema=ddl)
+        df = df.selectExpr(*[f"cast({c} as {t}) as {c}" for c, t in schema.items()])
         df.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable(f"raw.{name}")
         print(f"raw.{name}: {df.count()} rows")
 
