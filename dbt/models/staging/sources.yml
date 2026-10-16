@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: policy_sources
+
+models:
+  - name: stg_policy_sources
+    columns:
+      - name: source_id
+        tests: [not_null, unique]
+      - name: sha256
+        tests: [not_null]
