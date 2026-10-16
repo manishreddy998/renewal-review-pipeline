@@ -114,6 +114,19 @@ matched as (
         case
             when c.field = 'policy_number' then pf.policy_number
             when c.field in ('carrier', 'vehicle') then coalesce(b.known, c.value)
+            -- Keep a coverage only if its name really appears in the document. A deductible line
+            -- like COLLISION DEDUCTIBLE does not count as the collision or upset coverage.
+            -- OCR text misspells names ("specified penis"), so this check is for digital text only.
+            when c.field = 'optional_coverages' and not dt.has_ocr then nullif(array_join(filter(
+                split(c.value, ','),
+                x -> case x
+                    when 'collision_or_upset' then dt.body_lower rlike 'collision\\s*(or|/)\\s*upset'
+                    when 'comprehensive' then dt.body_lower rlike 'comprehensive'
+                    when 'specified_perils' then dt.body_lower rlike 'specified\\s*perils'
+                    when 'all_perils' then dt.body_lower rlike 'all\\s*perils'
+                    else false
+                end
+            ), ','), '')
             -- Same idea for the client name: use the agency record when it is a near match.
             when c.field = 'insured_name' and levenshtein(c.value, lower(am.insured_name)) <= 3
                 then lower(am.insured_name)
@@ -127,6 +140,9 @@ matched as (
     left join policy_fix pf on pf.document_id = c.document_id
     left join best b on b.document_id = c.document_id and b.field = c.field
     left join {{ ref('stg_ams_policies') }} am on am.policy_number = pf.policy_number
+    left join (
+        select document_id, has_ocr, lower(body) as body_lower from {{ ref('int_document_text') }}
+    ) dt on dt.document_id = c.document_id
 )
 
 select
