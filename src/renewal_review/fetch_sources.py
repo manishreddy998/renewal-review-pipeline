@@ -3,7 +3,6 @@
 The PDF itself is not stored in git. We keep the URL and a checksum so anyone can
 fetch the same file and confirm it has not changed.
 """
-import argparse
 import hashlib
 import json
 from datetime import datetime, timezone
@@ -57,25 +56,11 @@ def fetch(source: dict, out_dir: Path) -> dict:
     }
 
 
-def load_to_delta(rows: list[dict]) -> None:
-    from renewal_review.spark import get_spark
-
-    spark = get_spark()
-    spark.sql("create schema if not exists raw")
-    spark.createDataFrame(rows).write.format("delta").mode("overwrite").saveAsTable("raw.policy_sources")
-
-
 def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--no-delta", action="store_true", help="only download, skip the Delta load")
-    args = parser.parse_args()
-
     rows = [fetch(s, RAW_DIR) for s in SOURCES]
     (RAW_DIR / "manifest.json").write_text(json.dumps(rows, indent=2))
     for r in rows:
         print(f"{r['source_id']}: {r['page_count']} pages, sha256 {r['sha256'][:12]}")
-    if not args.no_delta:
-        load_to_delta(rows)
 
 
 if __name__ == "__main__":
