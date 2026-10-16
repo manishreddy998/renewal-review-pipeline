@@ -43,6 +43,42 @@ to be trusted, three things matter:
 - **No double counting (idempotency and dedup):** rerunning the pipeline or reloading a file must
   not create duplicate policies or count a change twice.
 
+## What we found using the public data
+
+**Base wording.** We used the public FSRA Ontario Automobile Policy, OAP 1 (the standard owner's
+policy every Ontario insurer must use, July 2026 version, 68 pages) for real coverage names and
+section numbers. The PDF is downloaded from FSRA and checked by checksum, not stored here.
+
+**Test data.** Real policies are private, so we made 200 synthetic clients across 3 fictional
+agencies, each with last year's policy and a renewal (400 documents). We planted the changes
+ourselves, so the right answer is known (an answer key, or ground truth). The agencies use
+different layouts, and 71 documents are scanned looking images that need OCR (optical character
+recognition, turning a picture of text into text).
+
+**Measured results** on Databricks, all 400 documents:
+
+- **Field accuracy:** 99.84% of 4,400 fields right. 100% on digital PDFs, 99.1% on scans.
+- **Change detection:** 193 real changes, 100% precision (no false alarms) and 100% recall
+  (none missed).
+- **Work list:** the priority matches the answer key for 200 of 200 accounts.
+- **Traceability:** 100% of values cite a page that exists and quote text found on that page.
+- **Isolation:** 0 cross agency leaks across every broker and agency pair tested.
+- **No double counting:** every pair has exactly one last year and one renewal row (dbt test),
+  loads replace tables instead of appending, and extraction is incremental, keyed on the
+  document, a hash of its text and the prompt version, so a rerun never adds a second copy.
+- **Cost and speed:** $0.0048 per document at list price, about 0.43 seconds each in a batch.
+
+**Weak spots found and fixed:**
+
+- A "COLLISION DEDUCTIBLE" line was read as collision coverage. Dropped coverage precision went
+  from 65% to 100% after clearer rules and a text check.
+- OCR garbled policy numbers (`SYN-AGY@@2`). Matching to the agency's own policy list took them
+  from 73% to 100% on scans.
+- OCR garbled names (`huron genera!`). Matching to known carriers and vehicles fixed them.
+- OCR read years as 2625. Years after 2030 are corrected.
+- A few scanned numbers cannot be fixed from the page. Those accounts are now marked "needs data
+  check", and all 7 of them are caught.
+
 ## The problem
 
 - A mid size agency renews hundreds of auto policies a month, and each renewal comes as a PDF
