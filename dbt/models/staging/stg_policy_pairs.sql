@@ -11,6 +11,9 @@ select
     optional_coverages,
     drivers,
     annual_premium,
+    carrier,
+    effective_date,
+    vehicle,
     planted_changes,
     stamp
 from {{ source('raw', 'policy_pairs') }}
