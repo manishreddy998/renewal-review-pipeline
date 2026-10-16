@@ -14,6 +14,35 @@ its own clients. It runs on Databricks with Delta tables, Unity Catalog and dbt.
 
 ![Dashboard](docs/images/dashboard.png)
 
+## The problem we are trying to solve
+
+When a client's auto policy comes up for renewal, the carrier (the insurance company) sends a
+renewal offer. The broker, the person who looks after the client, should compare it with last
+year's policy before the client accepts. In practice a busy agency renews hundreds of policies a
+month and cannot read them all side by side.
+
+What slips through:
+
+- **Premium increase:** the yearly price goes up 20 or 30 percent and nobody shops it around.
+- **Coverage dropped:** an optional coverage, such as collision, quietly disappears. The client
+  finds out only after an accident.
+- **Higher deductible:** the amount the client pays first on a claim goes from $500 to $1,000.
+- **Lower liability limit:** the most the policy pays if the client injures someone drops from
+  $2M to $1M.
+
+Each one costs the client money or protection, and costs the agency trust.
+
+Companies like Quandri solve this with software that reads every renewal. For the data behind it
+to be trusted, three things matter:
+
+- **Per agency isolation (multi tenancy):** many agencies share one platform, and the data holds
+  client details (PII, personally identifiable information). One agency must never see another
+  agency's clients.
+- **Traceability (provenance):** every number shown to a broker must point back to the document
+  and page it came from, so it can be checked.
+- **No double counting (idempotency and dedup):** rerunning the pipeline or reloading a file must
+  not create duplicate policies or count a change twice.
+
 ## The problem
 
 - A mid size agency renews hundreds of auto policies a month, and each renewal comes as a PDF
