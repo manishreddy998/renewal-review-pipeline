@@ -1,5 +1,7 @@
 # Renewal Review Pipeline
 
+**Reads last year's auto policy and the renewal, finds the risky changes, and gives each insurance agency a ranked work list with proof.**
+
 Every year a broker gets a renewal offer for each client: a new premium, maybe a higher
 deductible, maybe a coverage that quietly disappeared. Nobody has time to read every renewal
 next to last year's policy, so the risky ones slip through.
@@ -130,11 +132,26 @@ blur, so they have to go through OCR. See [docs/sources.md](docs/sources.md) and
 
 ## How it works
 
-```
-PDFs ──> page text (PDF text or OCR) ──> raw Delta tables in Unity Catalog
-     ──> ai_query extraction with page citations ──> cleaning and repair
-     ──> last year vs renewal ──> risk score and work list per agency
-     ──> evaluation against the answer key
+```mermaid
+flowchart TD
+    A["Policy PDFs and scans<br/>last year and renewal"] --> B{"Has a text layer?"}
+    B -->|yes| C["Read PDF text<br/>pypdf"]
+    B -->|no| D["Tesseract OCR<br/>with confidence per number"]
+    C --> E["Raw Delta tables<br/>PySpark, Unity Catalog workspace.raw"]
+    D --> E
+    E --> F["LLM field extraction<br/>ai_query, 11 fields with page and quote"]
+    F --> G["dbt silver models<br/>clean, repair OCR errors, check evidence"]
+    G --> H["Change detection<br/>last year vs renewal, 8 flags"]
+    H --> I["Priority scoring<br/>review now, review, routine, needs data check"]
+    I --> J["Work list mart_renewal_queue"]
+    K["agency_access seed"] --> L["Unity Catalog row filter<br/>each agency sees only its own rows"]
+    L --> J
+    J --> M["Per agency views"]
+    J --> N["Evidence table<br/>page and quote for both years"]
+    J --> O["Evaluation vs answer key<br/>accuracy, precision, recall, cost"]
+    M --> P["CSV export and Streamlit dashboard"]
+    N --> P
+    O --> P
 ```
 
 1. **Render and read.** `render.py` builds the PDFs. `pages.py` reads the text layer, or runs
@@ -169,6 +186,20 @@ PDFs ──> page text (PDF text or OCR) ──> raw Delta tables in Unity Catal
    list agreement, data check catch rate, and cost.
 
 dbt runs 60 models, seeds and tests on Databricks, all passing.
+
+## Stack
+
+| Layer | Tools |
+| --- | --- |
+| Platform | Databricks (GCP workspace), Unity Catalog |
+| Storage | Delta Lake (delta-spark 3.2.1) |
+| Processing | PySpark 3.5.3, Databricks SQL connector |
+| Document reading | pypdf, pdf2image with poppler, Tesseract OCR (pytesseract) |
+| Field extraction | Databricks `ai_query` on the `databricks-gemini-3-5-flash` endpoint |
+| Transformations and tests | dbt-core 1.9.4, dbt-databricks 1.9.7, dbt-spark 1.9.2 for local runs |
+| Synthetic documents | Python, reportlab, Pillow |
+| Dashboard | Streamlit, pandas |
+| Packaging and tests | Docker, Docker Compose, Make, pytest |
 
 ## Results
 
@@ -251,15 +282,40 @@ docker compose run --rm app make dbt-databricks      # dbt build on Databricks
 docker compose run --rm app make export              # refresh results/*.csv
 ```
 
-## Repo layout
+## Project structure
 
 ```
-src/renewal_review/   data generation, PDF rendering, OCR, loaders, export
-dbt/models/staging    raw tables as views
-dbt/models/silver     extraction, cleaning, repair, typed policies
-dbt/models/gold       comparison, work list, evidence, agency views
-dbt/models/eval       accuracy, change detection, data checks, cost
-dbt/tests             leak tests, traceability, row filter checks
-dashboard/            Streamlit work list
-results/              exported results and summary
+renewal-review-pipeline/
+├── src/renewal_review/      data generation, PDF rendering, OCR, loaders, export
+│   ├── synthetic.py         makes the 200 synthetic clients and planted changes
+│   ├── render.py            turns them into PDFs and scanned looking images
+│   ├── pages.py             page text from the PDF, or Tesseract OCR on scans
+│   ├── load_raw.py          writes raw Delta tables, local or on Databricks
+│   ├── fetch_sources.py     downloads the FSRA OAP 1 wording and checks it
+│   └── export_results.py    exports result tables to results/
+├── dbt/
+│   ├── models/staging/      raw tables as views
+│   ├── models/silver/       extraction, cleaning, repair, typed policies
+│   ├── models/gold/         comparison, work list, evidence, agency views
+│   ├── models/eval/         accuracy, change detection, data checks, cost
+│   ├── macros/              extraction prompt, change flags, agency row filter
+│   ├── seeds/               agency access, known carriers and vehicles
+│   └── tests/               leak tests, traceability, row filter checks
+├── dashboard/app.py         Streamlit work list
+├── results/                 exported results and summary
+├── docs/                    sources, synthetic data plan, images
+├── tests/                   pytest checks for data generation and rendering
+├── Dockerfile, docker-compose.yml, Makefile
+└── requirements.txt
 ```
+
+## Author
+
+**Manish Reddy**, data engineer
+- Email: [manishreddyr998@gmail.com](mailto:manishreddyr998@gmail.com)
+- GitHub: [manishreddy998](https://github.com/manishreddy998)
+- LinkedIn: [manish-re-50c02a719k](https://www.linkedin.com/in/manish-re-50c02a719k/)
+
+## License
+
+[MIT](LICENSE). The FSRA OAP 1 wording is not stored in this repo; it is downloaded from FSRA.
