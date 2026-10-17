@@ -1,5 +1,7 @@
 # Renewal Review Pipeline
 
+**Reads last year's auto policy and the renewal, finds the risky changes, and gives each insurance agency a ranked work list with proof.**
+
 Every year a broker gets a renewal offer for each client: a new premium, maybe a higher
 deductible, maybe a coverage that quietly disappeared. Nobody has time to read every renewal
 next to last year's policy, so the risky ones slip through.
