@@ -132,11 +132,26 @@ blur, so they have to go through OCR. See [docs/sources.md](docs/sources.md) and
 
 ## How it works
 
-```
-PDFs ──> page text (PDF text or OCR) ──> raw Delta tables in Unity Catalog
-     ──> ai_query extraction with page citations ──> cleaning and repair
-     ──> last year vs renewal ──> risk score and work list per agency
-     ──> evaluation against the answer key
+```mermaid
+flowchart TD
+    A["Policy PDFs and scans<br/>last year and renewal"] --> B{"Has a text layer?"}
+    B -- yes --> C["Read PDF text<br/>pypdf"]
+    B -- no --> D["Tesseract OCR<br/>with confidence per number"]
+    C --> E["Raw Delta tables<br/>PySpark, Unity Catalog workspace.raw"]
+    D --> E
+    E --> F["LLM field extraction<br/>ai_query, 11 fields with page and quote"]
+    F --> G["dbt silver models<br/>clean, repair OCR errors, check evidence"]
+    G --> H["Change detection<br/>last year vs renewal, 8 flags"]
+    H --> I["Priority scoring<br/>review now, review, routine, needs data check"]
+    I --> J["Work list mart_renewal_queue"]
+    K["agency_access seed"] --> L["Unity Catalog row filter<br/>each agency sees only its own rows"]
+    L --> J
+    J --> M["Per agency views"]
+    J --> N["Evidence table<br/>page and quote for both years"]
+    J --> O["Evaluation vs answer key<br/>accuracy, precision, recall, cost"]
+    M --> P["CSV export and Streamlit dashboard"]
+    N --> P
+    O --> P
 ```
 
 1. **Render and read.** `render.py` builds the PDFs. `pages.py` reads the text layer, or runs
@@ -171,6 +186,20 @@ PDFs ──> page text (PDF text or OCR) ──> raw Delta tables in Unity Catal
    list agreement, data check catch rate, and cost.
 
 dbt runs 60 models, seeds and tests on Databricks, all passing.
+
+## Stack
+
+| Layer | Tools |
+| --- | --- |
+| Platform | Databricks (GCP workspace), Unity Catalog |
+| Storage | Delta Lake (delta-spark 3.2.1) |
+| Processing | PySpark 3.5.3, Databricks SQL connector |
+| Document reading | pypdf, pdf2image with poppler, Tesseract OCR (pytesseract) |
+| Field extraction | Databricks `ai_query` on the `databricks-gemini-3-5-flash` endpoint |
+| Transformations and tests | dbt-core 1.9.4, dbt-databricks 1.9.7, dbt-spark 1.9.2 for local runs |
+| Synthetic documents | Python, reportlab, Pillow |
+| Dashboard | Streamlit, pandas |
+| Packaging and tests | Docker, Docker Compose, Make, pytest |
 
 ## Results
 
