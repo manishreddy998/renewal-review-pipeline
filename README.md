@@ -135,8 +135,8 @@ blur, so they have to go through OCR. See [docs/sources.md](docs/sources.md) and
 ```mermaid
 flowchart TD
     A["Policy PDFs and scans<br/>last year and renewal"] --> B{"Has a text layer?"}
-    B -- yes --> C["Read PDF text<br/>pypdf"]
-    B -- no --> D["Tesseract OCR<br/>with confidence per number"]
+    B -->|yes| C["Read PDF text<br/>pypdf"]
+    B -->|no| D["Tesseract OCR<br/>with confidence per number"]
     C --> E["Raw Delta tables<br/>PySpark, Unity Catalog workspace.raw"]
     D --> E
     E --> F["LLM field extraction<br/>ai_query, 11 fields with page and quote"]
@@ -282,15 +282,40 @@ docker compose run --rm app make dbt-databricks      # dbt build on Databricks
 docker compose run --rm app make export              # refresh results/*.csv
 ```
 
-## Repo layout
+## Project structure
 
 ```
-src/renewal_review/   data generation, PDF rendering, OCR, loaders, export
-dbt/models/staging    raw tables as views
-dbt/models/silver     extraction, cleaning, repair, typed policies
-dbt/models/gold       comparison, work list, evidence, agency views
-dbt/models/eval       accuracy, change detection, data checks, cost
-dbt/tests             leak tests, traceability, row filter checks
-dashboard/            Streamlit work list
-results/              exported results and summary
+renewal-review-pipeline/
+├── src/renewal_review/      data generation, PDF rendering, OCR, loaders, export
+│   ├── synthetic.py         makes the 200 synthetic clients and planted changes
+│   ├── render.py            turns them into PDFs and scanned looking images
+│   ├── pages.py             page text from the PDF, or Tesseract OCR on scans
+│   ├── load_raw.py          writes raw Delta tables, local or on Databricks
+│   ├── fetch_sources.py     downloads the FSRA OAP 1 wording and checks it
+│   └── export_results.py    exports result tables to results/
+├── dbt/
+│   ├── models/staging/      raw tables as views
+│   ├── models/silver/       extraction, cleaning, repair, typed policies
+│   ├── models/gold/         comparison, work list, evidence, agency views
+│   ├── models/eval/         accuracy, change detection, data checks, cost
+│   ├── macros/              extraction prompt, change flags, agency row filter
+│   ├── seeds/               agency access, known carriers and vehicles
+│   └── tests/               leak tests, traceability, row filter checks
+├── dashboard/app.py         Streamlit work list
+├── results/                 exported results and summary
+├── docs/                    sources, synthetic data plan, images
+├── tests/                   pytest checks for data generation and rendering
+├── Dockerfile, docker-compose.yml, Makefile
+└── requirements.txt
 ```
+
+## Author
+
+**Manish Reddy**, data engineer
+- Email: [manishreddyr998@gmail.com](mailto:manishreddyr998@gmail.com)
+- GitHub: [manishreddy998](https://github.com/manishreddy998)
+- LinkedIn: [manish-re-50c02a719k](https://www.linkedin.com/in/manish-re-50c02a719k/)
+
+## License
+
+[MIT](LICENSE). The FSRA OAP 1 wording is not stored in this repo; it is downloaded from FSRA.
