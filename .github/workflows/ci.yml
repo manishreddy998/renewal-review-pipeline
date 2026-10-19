@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the Docker image
+        run: docker build -t renewal-review:ci .
+
+      - name: Unit tests
+        run: docker run --rm renewal-review:ci pytest -q
+
+      # Fetch the public FSRA wording, make 12 synthetic pairs, render, read pages,
+      # load local Delta tables and run the dbt staging models and tests.
+      # Extraction uses ai_query, which only runs on Databricks, so it is not part of CI.
+      - name: Local pipeline and dbt tests
+        run: docker run --rm renewal-review:ci make ci-smoke
