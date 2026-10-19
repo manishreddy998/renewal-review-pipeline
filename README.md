@@ -1,5 +1,7 @@
 # Renewal Review Pipeline
 
+[![ci](https://github.com/manishreddy998/renewal-review-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/manishreddy998/renewal-review-pipeline/actions/workflows/ci.yml)
+
 **Reads last year's auto policy and the renewal, finds the risky changes, and gives each insurance agency a ranked work list with proof.**
 
 Every year a broker gets a renewal offer for each client: a new premium, maybe a higher
