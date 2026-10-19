@@ -22,8 +22,8 @@ jobs:
       - name: Unit tests
         run: docker run --rm renewal-review:ci pytest -q
 
-      # Fetch the public FSRA wording, make 12 synthetic pairs, render, read pages,
-      # load local Delta tables and run the dbt staging models and tests.
+      # Write a marked stand-in wording PDF (FSRA blocks GitHub runners), make 12 synthetic
+      # pairs, render, read pages, load local Delta tables and run the dbt staging models and tests.
       # Extraction uses ai_query, which only runs on Databricks, so it is not part of CI.
       - name: Local pipeline and dbt tests
         run: docker run --rm renewal-review:ci make ci-smoke
