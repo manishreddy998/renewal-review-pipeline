@@ -26,8 +26,9 @@ test:
 smoke: test fetch synthetic render pages load dbt
 
 # Same local steps on a small set of pairs, so a CI run stays quick.
+# FSRA blocks GitHub runners, so CI uses a marked stand-in for the wording PDF.
 ci-smoke:
-	python -m renewal_review.fetch_sources
+	python -m renewal_review.ci_source
 	python -m renewal_review.synthetic --pairs 12
 	python -m renewal_review.render
 	python -m renewal_review.pages
